@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://uwpdver.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -102,10 +102,15 @@ theme: minos
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:uwpdver/uwpdver.github.io.git # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: master
+  message: 'deploy'
+
 
 # hexo-admin authentification
 admin:
   username: 1119548217@qq.com
   password_hash: $2a$10$YaYB588SzHU9uCEkY0FTmeI55YI7T.wK34VXa3zd1vPK1LtJ0G4MO
   secret: my super secret phrase
+  deployCommand: hexo clean | hexo deploy

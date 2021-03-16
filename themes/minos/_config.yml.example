@@ -64,7 +64,7 @@ plugins:
 navbar_links:
   GitHub:
     icon: fab fa-github
-    url: https://github.com/ppoffice/hexo-theme-minos
+    url: https://github.com/uwpdver
 
 # Links at the bottom of the page.
 footer_links:
