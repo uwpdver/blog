@@ -2,6 +2,9 @@
 title: "用 OneDrive 做图床"
 date: "2021-08-28 16:00"
 description: ""
+tags: 
+- 技巧
+- 博客
 ---
 
 博客文章大部分都是用 markdown 写作，文章中除了文字内容通常也有图片。   
