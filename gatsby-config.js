@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `要没时间了的博客`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `要没时间了`,
+      summary: `他活在自己的世界里.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `早餐吃 711 的芝士猪排饭团`,
+    siteUrl: `https://helloo.world/`,
     social: {
-      twitter: `kylemathews`,
+      github: `https://github.com/uwpdver`,
     },
   },
   plugins: [
@@ -51,12 +51,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -118,7 +112,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/kabuda.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

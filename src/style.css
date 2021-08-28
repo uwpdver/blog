@@ -32,7 +32,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
     Times, serif;
-  --font-body: var(--fontFamily-serif);
+  --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
@@ -258,6 +258,10 @@ a:focus {
   font-size: var(--fontSize-7);
   margin: 0;
 }
+
+.header-description {
+  margin-top: var(--spacing-4);
+} 
 
 .post-list-item {
   margin-bottom: var(--spacing-8);
