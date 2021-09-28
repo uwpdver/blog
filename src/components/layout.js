@@ -22,8 +22,6 @@ const Layout = ({ location, title, children }) => {
   const social = data.site.siteMetadata?.social
   const description = data.site.siteMetadata?.description
 
-  console.log(social);
-
   if (isRootPath) {
     header = (
       <>
