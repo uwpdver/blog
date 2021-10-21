@@ -44,11 +44,12 @@ const Bio = () => {
       />
       <div>
         <p>
-          这里是<strong>{author?.name}</strong>你知道的
+          这里是<strong>{author?.name}</strong>
         </p>
         <p>
           {author?.summary || null}
         </p>
+        <span>💻</span>
         <a href={`${social?.github || ``}`}>
           Github
         </a>
