@@ -3,7 +3,7 @@ module.exports = {
     title: `要没时间了的博客`,
     author: {
       name: `要没时间了`,
-      summary: `他活在自己的世界里.`,
+      summary: `我的妈妈告诉 生活是艰难的.`,
     },
     description: `工作是前端开发，早餐喜欢吃 711 的芝士猪排饭团。`,
     siteUrl: `https://helloo.world/`,
