@@ -5,7 +5,7 @@ module.exports = {
       name: `要没时间了`,
       summary: `他活在自己的世界里.`,
     },
-    description: `早餐吃 711 的芝士猪排饭团`,
+    description: `工作是前端开发，早餐喜欢吃 711 的芝士猪排饭团。`,
     siteUrl: `https://helloo.world/`,
     social: {
       github: `https://github.com/uwpdver`,
