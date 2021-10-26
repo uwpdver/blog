@@ -3,7 +3,10 @@ title: React Fiber 架构
 date: 2021-09-29 14:01
 description: 对文章 React Fiber Architecture 的翻译
 category: 翻译
-tags: ["翻译", "react", "react 原理"]
+tags:
+- "翻译"
+- "react"
+- "react 原理"
 ---
 原文：[React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)  
 作者：[acdlite](https://twitter.com/acdlite)  

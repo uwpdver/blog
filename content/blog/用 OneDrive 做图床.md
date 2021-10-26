@@ -3,7 +3,10 @@ title: 怎么用 OneDrive 做图床
 date: 2021-08-28 16:00
 description: 这篇文章记录使用 OneDrive 作为图床的方法
 category: 教程
-tags:  ["教程", "技巧", "博客"]
+tags:
+- "教程"
+- "技巧"
+- "博客"
 ---
 
 博客文章大部分都是用 markdown 写作，文章中除了文字内容通常也有图片。   

@@ -3,7 +3,10 @@ title: React 组件，元素，和实例
 date: 2021-09-28 13:30
 description: 对 React 官方文档 React Components Elements, and Instances 的翻译
 category: 翻译
-tags: ["翻译", "react", "react 原理"]
+tags:
+- "翻译"
+- "react"
+- "react 原理"
 ---
 原文：[React Components, Elements, and Instances – React Blog (reactjs.org)](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)  
 作者：[Dan Abramov](https://twitter.com/dan_abramov)  

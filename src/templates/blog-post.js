@@ -28,7 +28,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <p>
             <span>{post.frontmatter.date}</span>
             <ul>
-              {post.frontmatter.tags.map(tag => (
+              {post.frontmatter.tags?.map(tag => (
                 <li className="tag-item tag-item-in-blog-page" key={tag}>
                   <Link to={`/tags/${kebabCase(tag)}/`} className="tag-item-link">
                     {tag}
