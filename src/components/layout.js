@@ -26,7 +26,7 @@ const Layout = ({ location, title, children, to='/' }) => {
   if (isRootPath) {
     header = (
       <>
-        <div className="flex justify-between">
+        <div className="heading-container">
           <h1 className="main-heading">
             <Link to={to}>{title}</Link>
           </h1>
@@ -36,7 +36,6 @@ const Layout = ({ location, title, children, to='/' }) => {
             }
           </nav>
         </div>
-        <p className="header-description">{description}</p>
       </>
     )
   } else {
@@ -52,8 +51,7 @@ const Layout = ({ location, title, children, to='/' }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, 我的妈妈告诉我，生活是艰难的。
-        {` `}
+        © {new Date().getFullYear()}, {description}
       </footer>
     </div>
   )

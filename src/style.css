@@ -175,7 +175,7 @@ ol {
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-image: none;
 }
 
@@ -259,10 +259,11 @@ a:focus {
 .main-heading {
   font-size: var(--fontSize-4);
   margin: 0;
+  margin-bottom: var(--spacing-2);
 }
 
 .header-description {
-  margin-top: var(--spacing-4);
+  margin-top: var(--spacing-2);
   margin-bottom: var(--spacing-4);
 } 
 
@@ -296,7 +297,7 @@ a:focus {
 .bio {
   display: flex;
   margin-bottom: var(--spacing-12);
-  padding: var(--spacing-8) var(--spacing-6);
+  padding: var(--spacing-6) var(--spacing-6);
   border-radius: var(--spacing-6);
   background-color: var(--color-bio);
 }
@@ -312,10 +313,16 @@ a:focus {
   border-radius: 100%;
 }
 
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .nav {
+  flex: 0 0 max-content;
   display: flex;
   list-style-type: none;
-  margin-bottom: var(--spacing-4);
 }
 
 .nav-item {
@@ -385,8 +392,8 @@ a:focus {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
   }
-  ul,
-  ol {
-    list-style-position: inside;
+
+  .bio {
+    padding: var(--spacing-4) var(--spacing-4);
   }
 }
