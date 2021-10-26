@@ -1,7 +1,9 @@
 ---
-title: 【笔记】浏览器工作原理——HTTP请求流程
+title: 浏览器工作原理——HTTP请求流程
 date: 2021-10-17 11:14
 description: 《浏览器工作原理》专栏第三节的学习笔记，学习了浏览器中发起 HTTP 请求的流程。
+category: 笔记
+tags:  ["笔记", "浏览器", "计算机网络", "HTTP", "《浏览器工作原理》"]
 ---
 ### HTTP 请求流程
 ![HTTP 请求流程示意图](https://bl3301files.storage.live.com/y4msr6Uc6wYHTsbX_u5y-DOad3OueQXHcOqb1MGUUNZPY-VZL5DWNP1xU1HNF5rQfDPO54I-mImOk9J2Q_dJxsARjxkWQpyd9NeQDoogErqBO1UaGTZVbss1JGHOba9ENbuJX_NejYXzcBd86dQRLP7VgGDGkmRNv1U0xvhtvW19KrZLJBtsurVtmG1lA4djMLy?width=1142&height=423&cropmode=none "HTTP 请求流程示意图")  

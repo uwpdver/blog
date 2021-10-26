@@ -1,5 +1,6 @@
-/* CSS Custom Properties Definitions */
+@import './utils.css';
 
+/* CSS Custom Properties Definitions */
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
@@ -27,7 +28,7 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily-sans: system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
@@ -44,7 +45,7 @@
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
-  --lineHeight-relaxed: 1.625;
+  --lineHeight-relaxed: 1.75;
   /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
@@ -248,20 +249,21 @@ a:focus {
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
-}
-
-.global-header {
   margin-bottom: var(--spacing-12);
 }
 
+.global-header {
+  margin-bottom: var(--spacing-4);
+}
+
 .main-heading {
-  font-size: var(--fontSize-7);
+  font-size: var(--fontSize-4);
   margin: 0;
 }
 
 .header-description {
   margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
 } 
 
 .post-list-item {
@@ -274,14 +276,14 @@ a:focus {
 }
 
 .post-list-item h2 {
-  font-size: var(--fontSize-4);
+  font-size: var(--fontSize-3);
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
 }
 
 .post-list-item header {
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-2);
 }
 
 .header-link-home {
@@ -293,7 +295,7 @@ a:focus {
 
 .bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-12);
   padding: var(--spacing-8) var(--spacing-6);
   border-radius: var(--spacing-6);
   background-color: var(--color-bio);
@@ -310,6 +312,25 @@ a:focus {
   border-radius: 100%;
 }
 
+.nav {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: var(--spacing-4);
+}
+
+.nav-item {
+  font-size: var(--fontSize-2);
+}
+
+.nav-item-link {
+  text-decoration: none;
+}
+
+.nav-item:not(:last-child) { 
+  margin-right: var(--spacing-4);
+}
+
+.tags-page header h1,
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
 }
@@ -329,6 +350,32 @@ a:focus {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+.tag-list {
+  list-style-type: none;
+}
+
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-1);
+  padding: .2em .75em;
+  margin-bottom: var(--spacing-2);
+  background-color: var(--color-bio);
+}
+
+.tag-item:not(:last-child){
+  margin-right: var(--spacing-2);
+}
+
+.tag-item-link {
+  text-decoration: none;
+}
+
+.tag-item-in-blog-page {
+  font-size: var(--fontSize-1);
 }
 
 /* Media queries */

@@ -3,9 +3,27 @@ module.exports = {
     title: `要没时间了的博客`,
     author: {
       name: `要没时间了`,
-      summary: `我的妈妈告诉 生活是艰难的.`,
+      summary: `职业是前端开发，早餐喜欢吃 711 的芝士猪排饭团。`,
     },
-    description: `工作是前端开发，早餐喜欢吃 711 的芝士猪排饭团。`,
+    menus: [
+      {
+        name: '首页',
+        slug: '/'
+      },
+      {
+        name: '标签',
+        slug: '/tags'
+      },
+      {
+        name: '作品',
+        slug: '/works'
+      },
+      {
+        name: '关于',
+        slug: '/about'
+      },
+    ],
+    description: `分享知识和生活，记录成长与感动。`,
     siteUrl: `https://helloo.world/`,
     social: {
       github: `https://github.com/uwpdver`,

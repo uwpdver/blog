@@ -1,15 +1,16 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, children, to='/' }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
         siteMetadata {
-          description
-          social {
-            github
+          menus {
+            name
+            slug
           }
+          description
         }
       }
     }
@@ -19,21 +20,28 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
   let header
 
-  const social = data.site.siteMetadata?.social
+  const menus = data.site.siteMetadata?.menus
   const description = data.site.siteMetadata?.description
 
   if (isRootPath) {
     header = (
       <>
-        <h1 className="main-heading">
-          <Link to="/">{title}</Link>
-        </h1>
+        <div className="flex justify-between">
+          <h1 className="main-heading">
+            <Link to={to}>{title}</Link>
+          </h1>
+          <nav className="nav flex justify-between">
+            {
+              menus.map((item, idx) => <li key={idx} className="nav-item"><Link className="nav-item-link" to={item.slug}>{item.name}</Link></li>)
+            }
+          </nav>
+        </div>
         <p className="header-description">{description}</p>
       </>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
+      <Link className="header-link-home" to={to}>
         {title}
       </Link>
     )
@@ -44,9 +52,8 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
+        © {new Date().getFullYear()}, 我的妈妈告诉我，生活是艰难的。
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
     </div>
   )
