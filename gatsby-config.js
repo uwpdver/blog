@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         name: '作品',
-        slug: '/works'
+        slug: '/products'
       },
       {
         name: '关于',
@@ -36,6 +36,19 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        typeName: `Yaml`, // a fixed string
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/product`,
+        name: `product`,
       },
     },
     {
@@ -135,6 +148,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

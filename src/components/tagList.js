@@ -9,6 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import kebabCase from "lodash/kebabCase"
+import TagItem from "./tagItem"
 
 const TagList = () => {
   const data = useStaticQuery(graphql`
@@ -25,13 +26,14 @@ const TagList = () => {
   const group = data.tagsGroup.group;
 
   return (
-    <ul className="tag-list">
+    <ul>
       {group.map(tag => (
-        <li className="tag-item" key={tag.fieldValue}>
-          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="tag-item-link">
-            {tag.fieldValue} ({tag.totalCount})
-          </Link>
-        </li>
+        <TagItem
+          link={`/tags/${kebabCase(tag.fieldValue)}/`}
+          itemkey={tag.fieldValue}
+        >
+          {tag.fieldValue} ({tag.totalCount})
+        </TagItem>
       ))}
     </ul>
   )

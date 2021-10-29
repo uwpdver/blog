@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostItem from "../components/postItem"
+import PageHeading from "../components/pageHeading"
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
@@ -19,9 +20,7 @@ const Tags = ({ pageContext, data, location }) => {
       <Seo title={tagHeader} />
       <Helmet title={tagHeader} />
       <div className="tags-page">
-        <header>
-          <h1>{tagHeader}</h1>
-        </header>
+        <PageHeading >{tagHeader}</PageHeading>
         <TagList />
         <ul style={{ listStyle: 'none' }}>
           {edges.map(({ node }) => {

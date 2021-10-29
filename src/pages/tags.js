@@ -7,6 +7,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TagList from "../components/tagList"
+import PageHeading from "../components/pageHeading"
 
 const TagsPage = ({
   data: {
@@ -20,9 +21,7 @@ const TagsPage = ({
     <Seo title="所有标签" />
     <Helmet title={title} />
     <div className="tags-page">
-      <header>
-        <h1>文章标签</h1>
-      </header>
+      <PageHeading>文章标签</PageHeading>
       <TagList />
     </div>
   </Layout>

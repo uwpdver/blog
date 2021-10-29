@@ -30,6 +30,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fieldValue
           }
         }
+        products: allYaml(
+          limit: 2000
+        ) {
+          nodes {
+            name
+            siteUrl
+            description
+            snapshots {
+              src
+            }
+          }
+        }
       }
     `
   )
@@ -77,6 +89,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  const productTemplate = path.resolve(`./src/templates/product.js`)
+  const products = result.data.products.nodes;
+  console.log('products', products)
+  products.forEach(product => {
+    createPage({
+      path: `/product/${_.kebabCase(product.name)}/`,
+      component: productTemplate,
+      context: product,
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

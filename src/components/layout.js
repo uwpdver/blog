@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import classnames from 'classnames'
 
 const Layout = ({ location, title, children, to = '/' }) => {
   const [isMenuExtended, setIsMenuExtended] = React.useState(false);
@@ -28,20 +29,24 @@ const Layout = ({ location, title, children, to = '/' }) => {
 
   header = (
     <>
-      <div className="global-header-mask" onClick={()=>setIsMenuExtended(false)}/>
-      <div className="heading-container">
-        <h1 className={`main-heading ${isRootPath ? '' : 'main-heading-other-path'}`}>
+      <div className="global-header-mask hidden fixed inset-0 w-screen h-screen" onClick={() => setIsMenuExtended(false)} />
+      <div className="heading-container relative flex items-center justify-between flex-wrap p-5">
+        <h1 className={classnames('flex-1 h-10 flex items-center', {
+          'font-bold text-3xl': isRootPath,
+          'text-lg align-middle': !isRootPath,
+        })}
+        >
           <Link to={to}>{title}</Link>
         </h1>
         <button className="global-menu-btn" onClick={handleMenuBtnClick} title="open the nav menu">
           <div className="hamburger-btn">
-            <div className="hamburger-btn-line" />
+            <div className="hamburger-btn-line text-primary" />
           </div>
         </button>
         <nav className="global-nav flex justify-between">
-          <ul className="global-nav-list">
+          <ul className="global-nav-list flex sm:space-x-4 divide-y  sm:divide-y-0 sm:space-y-0">
             {
-              menus.map((item, idx) => <li key={idx} className="nav-item"><Link className="nav-item-link" to={item.slug}>{item.name}</Link></li>)
+              menus.map((item, idx) => <li key={idx} className=" text-lg py-3 sm:py-0"><Link className="block w-full" to={item.slug}>{item.name}</Link></li>)
             }
           </ul>
         </nav>
@@ -50,10 +55,10 @@ const Layout = ({ location, title, children, to = '/' }) => {
   )
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div className="global-wrapper my-0 mx-auto max-w-2xl" data-is-root-path={isRootPath}>
       <header className="global-header" aria-expanded={isMenuExtended}>{header}</header>
-      <main className="main-wrapper">{children}</main>
-      <footer>
+      <main className="py-0 px-5">{children}</main>
+      <footer className="p-5 text-sm">
         © {new Date().getFullYear()}, {description}
       </footer>
     </div>

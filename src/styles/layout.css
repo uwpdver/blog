@@ -1,0 +1,82 @@
+/* Custom classes */
+.global-wrapper[data-is-root-path="true"] .bio {
+  margin-bottom: var(--spacing-12);
+}
+
+.global-header {
+  position: relative;
+  z-index: 999;
+  margin-bottom: var(--spacing-4);
+  background-color: white;
+}
+
+.bio-avatar {
+  min-width: 50px;
+}
+
+.heading-container {
+  background-color: inherit;
+}
+
+.global-nav {
+  background-color: inherit;
+  flex: 0 0 max-content;
+}
+
+.blog-post img {
+  max-width: 100%;
+}
+
+.tag-item:not(:last-child) {
+  margin-right: var(--spacing-2);
+}
+
+/* 菜单按钮 */
+.global-menu-btn {
+  display: none;
+}
+
+.hamburger-btn-line {
+  --line-h: 1px;
+  position: relative;
+  height: 10px;
+}
+
+.hamburger-btn-line,
+.hamburger-btn-line::before,
+.hamburger-btn-line::after {
+  width: 1.25em;
+  transition: all 240ms ease;
+}
+
+.hamburger-btn-line::before,
+.hamburger-btn-line::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  height: var(--line-h);
+  transform: translate3d(-50%, 0, 0);
+  background-color: currentColor;
+}
+
+.hamburger-btn-line::before {
+  top: 0;
+}
+
+.hamburger-btn-line::after {
+  bottom: 0;
+}
+
+.global-header[aria-expanded="true"] .hamburger-btn-line {
+  background-color: transparent;
+}
+
+.global-header[aria-expanded="true"] .hamburger-btn-line::before {
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+
+.global-header[aria-expanded="true"] .hamburger-btn-line::after {
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}

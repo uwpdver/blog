@@ -31,9 +31,9 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <div className="flex mb-12 p-6 rounded-3xl bg-blue-50">
       <StaticImage
-        className="bio-avatar"
+        className="mr-4 rounded-full"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
         src="../images/profile-pic.jpg"

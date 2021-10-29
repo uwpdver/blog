@@ -6,6 +6,8 @@ import kebabCase from "lodash/kebabCase"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import PageHeading from "../components/pageHeading"
+import TagItem from "../components/tagItem"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -19,34 +21,34 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        className="blog-post"
+        className="blog-post mb-10"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>
+        <header className="mb-4">
+          <PageHeading >{post.frontmatter.title}</PageHeading>
+          <p className="text-base mb-2">
             <span>{post.frontmatter.date}</span>
-            <ul>
-              {post.frontmatter.tags?.map(tag => (
-                <li className="tag-item tag-item-in-blog-page" key={tag}>
-                  <Link to={`/tags/${kebabCase(tag)}/`} className="tag-item-link">
-                    {tag}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </p>
+          <ul>
+            {post.frontmatter.tags?.map(tag => (
+              <TagItem
+                link={`/tags/${kebabCase(tag)}/`}
+                itemKey={tag}
+              >
+                {tag}
+              </TagItem>
+            ))}
+          </ul>
         </header>
         <section
+          className="prose"
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
         <hr />
-        <footer>
-          <Bio />
-        </footer>
       </article>
+      <Bio />
       <nav className="blog-post-nav">
         <ul
           style={{

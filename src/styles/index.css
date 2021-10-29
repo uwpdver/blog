@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./style.css";
+@import "./utils.css";
+@import "./product-page.css";
+@import "./layout.css";
+@import "./media.css";
+
+@layer base {
+  a {
+    @apply text-primary;
+  }
+
+  body {
+      @apply text-secondary;
+  }
+}
