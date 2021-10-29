@@ -34,7 +34,7 @@ const BlogPostTemplate = ({ data, location }) => {
             {post.frontmatter.tags?.map(tag => (
               <TagItem
                 link={`/tags/${kebabCase(tag)}/`}
-                itemKey={tag}
+                key={tag}
               >
                 {tag}
               </TagItem>
@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </ul>
         </header>
         <section
-          className="prose"
+          className="prose pt-4 pb-8"
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />

@@ -5,31 +5,20 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Section from "../components/productPageSection"
-import { max } from "lodash"
 
 const ProductTemplate = ({ pageContext, location }) => {
   const { name, snapshots, description, siteUrl } = pageContext;
   const snapshotListRef = useRef(null);
 
-  const handleNavToPrev = () => {
-    if(snapshotListRef.current){
+  const handleNavBtnClick = (isPrev) => {
+    if (snapshotListRef.current) {
       const children = snapshotListRef.current.children;
       const childWidth = children[0].getBoundingClientRect().width;
       const scrollWidth = snapshotListRef.current.scrollWidth;
       const scrollLeft = snapshotListRef.current.scrollLeft;
       const currentIndex = parseInt(((childWidth + scrollLeft) / scrollWidth) * children.length)
-      snapshotListRef.current.children[Math.max(0, currentIndex -1)].scrollIntoView({behavior: 'smooth'})
-    }
-  }
-
-  const handleNavToNext = () => {
-    if(snapshotListRef.current){
-      const children = snapshotListRef.current.children;
-      const childWidth = children[0].getBoundingClientRect().width;
-      const scrollWidth = snapshotListRef.current.scrollWidth;
-      const scrollLeft = snapshotListRef.current.scrollLeft;
-      const currentIndex = parseInt(((childWidth + scrollLeft) / scrollWidth) * children.length)
-      children[Math.min(currentIndex + 1, children.length - 1)].scrollIntoView({behavior: 'smooth'})
+      const navIndex = isPrev ? Math.max(0, currentIndex - 1) : Math.min(currentIndex + 1, children.length - 1);
+      snapshotListRef.current.children[navIndex].scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -44,12 +33,16 @@ const ProductTemplate = ({ pageContext, location }) => {
         </header>
         <Section title="屏幕截图">
           <div className="relative">
-            <button className="absolute top-1/2 bg-green-100 rounded-lg py-4 px-2 transform -translate-y-1/2 left-2" onClick={handleNavToPrev}>{'<'}</button>
-            <button className="absolute top-1/2 bg-green-100 rounded-lg py-4 px-2 transform -translate-y-1/2 right-2" onClick={handleNavToNext}>{'>'}</button>
+            <button className="hidden sm:block absolute top-1/2 bg-green-100 rounded-lg py-4 px-2 transform -translate-y-1/2 left-2" onClick={handleNavBtnClick.bind(null, true)}>{'<'}</button>
+            <button className="hidden sm:block absolute top-1/2 bg-green-100 rounded-lg py-4 px-2 transform -translate-y-1/2 right-2" onClick={handleNavBtnClick}>{'>'}</button>
             <ul className="product-snapshots-wrapper space-x-4" ref={snapshotListRef}>
-              {snapshots.map(snapshot => (
-                <li className="product-snapshot-item rounded-lg">
-                  <img className="product-snapshot-img" src={snapshot.src} alt="" />
+              {snapshots.map((snapshot, index) => (
+                <li className="product-snapshot-item rounded-lg" key={index}>
+                  <img
+                    className="product-snapshot-img"
+                    src={snapshot.src}
+                    alt={`snapshot ${index + 1}`}
+                  />
                 </li>
               ))}
             </ul>

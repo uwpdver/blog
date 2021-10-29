@@ -7,7 +7,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageHeading from "../components/pageHeading"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 const ProductsPage = ({
   data: {
@@ -30,7 +29,7 @@ const ProductsPage = ({
               <Link to={`/product/${kebabCase(product.name)}`}>
                 <article className="relative rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-white bg-opacity-50 z-10 opacity-0 group-hover:opacity-100" />
-                  <img className="" src={product.snapshots[0]?.src} />
+                  <img className="" src={product.snapshots[0]?.src} alt="snapshots"/>
                   <header className="absolute bottom-0 left-0 w-full h-32 z-20 text-secondary p-4 bg-blue-50 bg-opacity-70 backdrop-blur">
                     <h4 className="text-2xl font-bold mb-4">{product.name}</h4>
                     <p className="text-sm line-clamp-2">{product.description}</p>

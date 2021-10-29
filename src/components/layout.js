@@ -29,7 +29,7 @@ const Layout = ({ location, title, children, to = '/' }) => {
 
   header = (
     <>
-      <div className="global-header-mask hidden fixed inset-0 w-screen h-screen" onClick={() => setIsMenuExtended(false)} />
+      <div className="global-header-mask hidden fixed inset-0 w-screen h-screen" onClick={() => setIsMenuExtended(false)} role="" />
       <div className="heading-container relative flex items-center justify-between flex-wrap p-5">
         <h1 className={classnames('flex-1 h-10 flex items-center', {
           'font-bold text-3xl': isRootPath,

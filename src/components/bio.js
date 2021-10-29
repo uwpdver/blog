@@ -33,7 +33,7 @@ const Bio = () => {
   return (
     <div className="flex mb-12 p-6 rounded-3xl bg-blue-50">
       <StaticImage
-        className="mr-4 rounded-full"
+        className="mr-4 rounded-full flex-shrink-0"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
         src="../images/profile-pic.jpg"

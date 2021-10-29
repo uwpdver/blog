@@ -91,7 +91,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const productTemplate = path.resolve(`./src/templates/product.js`)
   const products = result.data.products.nodes;
-  console.log('products', products)
   products.forEach(product => {
     createPage({
       path: `/product/${_.kebabCase(product.name)}/`,
