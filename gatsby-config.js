@@ -3,7 +3,8 @@ module.exports = {
     title: `要没时间了的博客`,
     author: {
       name: `要没时间了`,
-      summary: `职业是前端开发，早餐喜欢吃 711 的芝士猪排饭团。`,
+      summary: `职业是前端开发，早餐喜欢吃 711 的芝士猪排饭团。喜欢写代码，爱折腾`,
+      introduction: `职业是前端开发，早餐喜欢吃 711 的芝士猪排饭团。喜欢写代码，爱折腾，喜欢实用有趣的工具，喜欢捣鼓自己的东西。喜欢好看的东西，喜欢的颜色是蓝色，白色，绿色。热爱篮球和说唱音乐。现役 NBA 球员最喜欢哈登，退役球员里面是邓肯。最喜欢的几个说唱歌手是法老，蛋堡和刘聪。流行歌手里面最喜欢周杰伦。`,
     },
     menus: [
       {
@@ -27,6 +28,7 @@ module.exports = {
     siteUrl: `https://helloo.world/`,
     social: {
       github: `https://github.com/uwpdver`,
+      email: 'liu.aim@qq.com'
     },
   },
   plugins: [
@@ -47,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/product`,
-        name: `product`,
+        path: `${__dirname}/src/data`,
+        name: `data`,
       },
     },
     {

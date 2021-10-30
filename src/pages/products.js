@@ -23,7 +23,7 @@ const ProductsPage = ({
     <div className="tags-page">
       <PageHeading>所有作品</PageHeading>
       <ul className="space-y-8">
-        {products.nodes.map(
+        {products.nodes[0].products.map(
           product => (
             <li key={product.name}>
               <Link to={`/product/${kebabCase(product.name)}`}>
@@ -65,11 +65,13 @@ export const pageQuery = graphql`
     }
     products: allYaml {
       nodes {
-        name
-        siteUrl
-        description
-        snapshots {
-          src
+        products {
+          name
+          siteUrl
+          description
+          snapshots {
+            src
+          }          
         }
       }
     }

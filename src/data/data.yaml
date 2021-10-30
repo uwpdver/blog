@@ -1,0 +1,88 @@
+skills:
+  -
+    title: 语言
+    list:
+    - 
+      name: HTML
+      icon: ../images/html-5-50.png
+    - 
+      name: CSS
+      icon: ../images/css3-50.png
+    - 
+      name: JavaScript
+      icon: ../images/javascript-50.png
+  -
+    title: 前端框架
+    list:
+    - 
+      name: React
+      icon: ../images/react-50.png
+  -
+    title: 组件库
+    list:
+    - 
+      name: Antd
+      icon: ../images/antd-50.png
+  -
+    title: 状态管理
+    list:
+    - 
+      name: Redux
+      icon: ../images/redux-50.png
+    - 
+      name: Rematch
+      icon: ../images/rematch-50.png
+  -
+    title: CSS 相关
+    list:
+    - 
+      name: Less
+      icon: ../images/less-50.png
+    - 
+      name: Tailwindcss
+      icon: ../images/tailwindcss-50.png    
+  -
+    title: 数据获取
+    list:
+    - 
+      name: Axios
+      icon: ../images/axios-50.png
+    - 
+      name: React-Query
+      icon: ../images/react-query-50.png
+  -
+    title: React 框架
+    list:
+    - 
+      name: Gatsby
+      icon: ../images/gatsbyjs-50.png
+  -
+    title: 工具
+    list:
+    - 
+      name: Git
+      icon: ../images/git-50.png
+    - 
+      name: VSCode
+      icon: ../images/vscode-50.png
+    - 
+      name: Npm
+      icon: ../images/npm-50.png
+  -
+    title: 设计
+    list:
+    - 
+      name: PhotoShop
+      icon: ../images/adobe-photoshop-48.png
+products:
+  - 
+    name: Nofeeding
+    description: Nofeeding 一个在线RSS阅读器，通过 RSS 追踪自己喜爱的网站的内容更新，该阅读器旨在提供高效可控且令人舒适的新闻阅读体验。在提供了 RSS 阅读器的基本功能的基础之外，还可以在明亮主题和黑暗主题之间切换，支持多种文章布局方式，适配了从桌面设备到移动设备，支持 PWA 渐进式网页应用，提供了简洁美观，响应性良好，可自定义的用户界面。
+    snapshots: 
+      - item:
+        src: https://bl3301files.storage.live.com/y4m1hb517fVoknDsmLquyyGz-6uHUjTBY9oiwJ21K70bWgFqP5X1HAn3INxhE9O3QdMAvtEL5iGnsuLa6K8uLMenj9NjMfJrVv_lQjt_Vr2jXnZDOc4XCtZFhjan335EzCf1ldk0Lfg8AXT5hI6eAWPg6JcQNaNrDPSMtyE8ETLVnwv8NwLBAPKXfqybJ93Ns5b?width=660&height=371&cropmode=none
+      - item:
+        src: https://bl3301files.storage.live.com/y4mNhZcfWIc4FSL2m7T0MMn8t5cZ15AquYQ-lJRw-Ya9JQjXRKwSCNBcgwOq-G4VrD_-5ynboKM84Q_GSfBU7yj0bcSnAIxbUBosvoNno6tWoK5go0vOQtPCSA5sZv1hdHQTn6lZR1usZBnbyfBRYQEpbFupF4euFzc7M_Dj2k7dr5nS9tKYWZRN2c6Sngr3SRC?width=660&height=371&cropmode=none
+      - item:
+        src: https://bl3301files.storage.live.com/y4mOS8IwmgYrQHQtugDroNU7UfLQa3b6UFNP3kWf9MIVk80WWuTmnbBu4KT-mf7glJNMEjk_3DGIuF7C9TFWW4leDJ052vVJo7BZyxVHv0CnbeM8CqLeNPAVf1c8ZiCJ9peVOL7occaFLgdpdl_chp-6VF3YYnVL8093upXfdagamIgiDP_8B_auSVFcFdG6SE9?width=660&height=419&cropmode=none
+    siteUrl: https://helloo.world

@@ -34,11 +34,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           limit: 2000
         ) {
           nodes {
-            name
-            siteUrl
-            description
-            snapshots {
-              src
+            products {
+              name
+              siteUrl
+              description
+              snapshots {
+                src
+              }          
             }
           }
         }
@@ -76,7 +78,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
-  
+
   const tagTemplate = path.resolve(`./src/templates/tags.js`)
   const tags = result.data.tagsGroup.group
   tags.forEach(tag => {
@@ -90,7 +92,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   const productTemplate = path.resolve(`./src/templates/product.js`)
-  const products = result.data.products.nodes;
+  const products = result.data.products.nodes[0].products;
   products.forEach(product => {
     createPage({
       path: `/product/${_.kebabCase(product.name)}/`,
