@@ -22,14 +22,14 @@ const AboutPage = ({ data, location }) => {
       <div className="divide-y">
         <Section title="关于我">
           <p>{introduction}</p>
-          <ul>
+          <ul className="mt-2">
             <li>
               <Link to="/我的经历——从毕业到离开长沙/">我的经历——从毕业到离开长沙</Link>
             </li>
           </ul>
         </Section>
         <Section title="技术栈">
-          <div className="tech-stack-content grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div className="tech-stack-content grid grid-cols-2 sm:grid-cols-4 gap-4">
             {skills.map((item, index) => (
               <TechStackGroup
                 className=""

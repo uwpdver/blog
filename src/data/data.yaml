@@ -12,11 +12,29 @@ skills:
       name: JavaScript
       icon: ../images/javascript-50.png
   -
+    title: 工具
+    list:
+    - 
+      name: Git
+      icon: ../images/git-50.png
+    - 
+      name: VSCode
+      icon: ../images/vscode-50.png
+    - 
+      name: Npm
+      icon: ../images/npm-50.png      
+  -
     title: 前端框架
     list:
     - 
       name: React
       icon: ../images/react-50.png
+  -
+    title: React 框架
+    list:
+    - 
+      name: Gatsby
+      icon: ../images/gatsbyjs-50.png      
   -
     title: 组件库
     list:
@@ -50,24 +68,6 @@ skills:
     - 
       name: React-Query
       icon: ../images/react-query-50.png
-  -
-    title: React 框架
-    list:
-    - 
-      name: Gatsby
-      icon: ../images/gatsbyjs-50.png
-  -
-    title: 工具
-    list:
-    - 
-      name: Git
-      icon: ../images/git-50.png
-    - 
-      name: VSCode
-      icon: ../images/vscode-50.png
-    - 
-      name: Npm
-      icon: ../images/npm-50.png
   -
     title: 设计
     list:
