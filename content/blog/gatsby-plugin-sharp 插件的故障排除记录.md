@@ -1,5 +1,5 @@
 ---
-title: 折腾博客第三天
+title: gatsby-plugin-sharp 插件的故障排除记录
 date: 2021-10-31 16:06
 description: npm 的依赖问题再次困扰着我，我把它记录下来，吸取教训，希望 npm 早日被更好的工具取代。这次的问题是 gatsby 的插件版本与 gatsby4.0.2 不兼容导致的，升级插件版本就解决了。
 category: 随笔
