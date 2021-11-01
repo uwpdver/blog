@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Section from "../components/productPageSection"
 
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+
 const ProductTemplate = ({ pageContext, location }) => {
   const { name, snapshots, description, siteUrl } = pageContext;
   const snapshotListRef = useRef(null);
@@ -18,7 +21,7 @@ const ProductTemplate = ({ pageContext, location }) => {
       const scrollLeft = snapshotListRef.current.scrollLeft;
       const currentIndex = parseInt(((childWidth + scrollLeft) / scrollWidth) * children.length)
       const navIndex = isPrev ? Math.max(0, currentIndex - 1) : Math.min(currentIndex + 1, children.length - 1);
-      snapshotListRef.current.children[navIndex].scrollIntoView({ behavior: 'smooth' })
+      snapshotListRef.current.children[navIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' })
     }
   }
 
@@ -33,16 +36,18 @@ const ProductTemplate = ({ pageContext, location }) => {
         </header>
         <Section title="屏幕截图">
           <div className="relative">
-            <button className="hidden sm:block absolute top-1/2 bg-green-100 rounded-lg py-4 px-2 transform -translate-y-1/2 left-2" onClick={handleNavBtnClick.bind(null, true)}>{'<'}</button>
-            <button className="hidden sm:block absolute top-1/2 bg-green-100 rounded-lg py-4 px-2 transform -translate-y-1/2 right-2" onClick={handleNavBtnClick}>{'>'}</button>
+            <button className="hidden sm:block absolute z-20 top-1/2 bg-gray-100 hover:bg-gray-300 hover:shadow-xl rounded-lg py-4 px-2 transform -translate-y-1/2 left-2" onClick={handleNavBtnClick.bind(null, true)}>{'<'}</button>
+            <button className="hidden sm:block absolute z-20 top-1/2 bg-gray-100 hover:bg-gray-300 hover:shadow-xl rounded-lg py-4 px-2 transform -translate-y-1/2 right-2" onClick={handleNavBtnClick.bind(null, false)}>{'>'}</button>
             <ul className="product-snapshots-wrapper space-x-4" ref={snapshotListRef}>
               {snapshots.map((snapshot, index) => (
                 <li className="product-snapshot-item rounded-lg" key={index}>
-                  <img
-                    className="product-snapshot-img"
-                    src={snapshot.src}
-                    alt={`snapshot ${index + 1}`}
-                  />
+                  <Zoom>
+                    <img
+                      className="product-snapshot-img"
+                      src={snapshot.src}
+                      alt={`snapshot ${index + 1}`}
+                    />
+                  </Zoom>
                 </li>
               ))}
             </ul>
