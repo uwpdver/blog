@@ -7,6 +7,7 @@ import PageHeading from "../components/pageHeading"
 import Section from "../components/productPageSection"
 import TechStackGroup from "../components/techStackGroup"
 import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
 
 
 const AboutPage = ({ data, location }) => {
@@ -14,11 +15,12 @@ const AboutPage = ({ data, location }) => {
   const introduction = data.site.siteMetadata.author.introduction
   const social = data.site.siteMetadata.social
   const skills = data.allYaml.nodes[0].skills
-
+  const pageTitle = '关于';
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="关于这个博客" />
-      <PageHeading>关于</PageHeading>
+      <Seo title={pageTitle} />
+      <Helmet title={pageTitle} />
+      <PageHeading>{pageTitle}</PageHeading>
       <div className="divide-y">
         <Section title="关于我">
           <p>{introduction}</p>

@@ -16,16 +16,19 @@ const TagsPage = ({
     },
   },
   location
-}) => (
-  <Layout location={location} title={title}>
-    <Seo title="所有标签" />
-    <Helmet title={title} />
-    <div className="tags-page">
-      <PageHeading>文章标签</PageHeading>
-      <TagList />
-    </div>
-  </Layout>
-)
+}) => {
+  const pageTitle = '全部标签';
+  return (
+    <Layout location={location} title={title}>
+      <Seo title={pageTitle} />
+      <Helmet title={pageTitle} />
+      <div className="tags-page">
+        <PageHeading>{pageTitle}</PageHeading>
+        <TagList />
+      </div>
+    </Layout>
+  )
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
