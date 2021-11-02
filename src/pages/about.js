@@ -45,7 +45,7 @@ const AboutPage = ({ data, location }) => {
         <Section title="GitHub">
           <img src="http://ghchart.rshah.org/uwpdver" alt="uwpdver's Github chart" />
         </Section>
-        <Section title="联系">
+        <Section title="联系我">
           <ul className="space-y-2">
             <li className="flex items-center">
               <StaticImage
@@ -56,7 +56,8 @@ const AboutPage = ({ data, location }) => {
                 alt="github"
                 quality={100}
               />
-              <Link to={social.github}>github</Link>
+              <span>Github：</span>
+              <Link to={social.github}>uwpdver</Link>
             </li>
             <li className="flex items-center">
               <StaticImage
@@ -66,7 +67,7 @@ const AboutPage = ({ data, location }) => {
                 src="../images/email-60.png" alt="email"
                 quality={100}
               />
-              <a href={social.email} target="_blank">{social.email}</a>
+              <span>邮箱：</span><span >{social.email}</span>
             </li>
           </ul>
         </Section>
