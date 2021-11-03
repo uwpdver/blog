@@ -69,6 +69,16 @@ const AboutPage = ({ data, location }) => {
               />
               <span>邮箱：</span><span >{social.email}</span>
             </li>
+            <li className="flex items-center">
+              <StaticImage
+                className="flex-shrink-0 mr-2"
+                width={24}
+                height={24}
+                src="../images/rss-32.png" alt="rss"
+                quality={100}
+              />
+              <span>RSS：</span><Link to="/rss.xml">{siteTitle}</Link>
+            </li>
           </ul>
         </Section>
       </div>

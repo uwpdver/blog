@@ -25,7 +25,7 @@ module.exports = {
       },
     ],
     description: `分享知识和生活，记录成长与感动。`,
-    siteUrl: `https://helloo.world/`,
+    siteUrl: `https://blog-ak8.pages.dev`,
     social: {
       github: `https://github.com/uwpdver`,
       email: 'liu.aim@qq.com'
