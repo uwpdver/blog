@@ -22,7 +22,7 @@ const AboutPage = ({ data, location }) => {
       <Helmet title={pageTitle} />
       <PageHeading>{pageTitle}</PageHeading>
       <div className="divide-y">
-        <Section title="关于我">
+        <Section title="关于我" className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
           <p>{introduction}</p>
           <ul className="mt-2">
             <li>
@@ -30,7 +30,7 @@ const AboutPage = ({ data, location }) => {
             </li>
           </ul>
         </Section>
-        <Section title="技术栈">
+        <Section title="技术栈" className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
           <div className="tech-stack-content grid grid-cols-2 sm:grid-cols-4 gap-4">
             {skills.map((item, index) => (
               <TechStackGroup
@@ -42,10 +42,10 @@ const AboutPage = ({ data, location }) => {
             ))}
           </div>
         </Section>
-        <Section title="GitHub">
+        <Section title="GitHub" className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
           <img src="http://ghchart.rshah.org/uwpdver" alt="uwpdver's Github chart" />
         </Section>
-        <Section title="联系我">
+        <Section title="联系我" className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
           <ul className="space-y-2">
             <li className="flex items-center">
               <StaticImage

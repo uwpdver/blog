@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header className="mb-4">
+        <header className="mb-4 delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
           <PageHeading >{post.frontmatter.title}</PageHeading>
           <p className="text-sm mb-2 text-gray-400">
             <span>{post.frontmatter.date}</span>
@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </ul>
         </header>
         <section
-          className="prose pt-4 pb-8"
+          className="prose pt-4 pb-8 delay-animate-list-item delay-animate-fade-in fade-in-slide-up"
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
