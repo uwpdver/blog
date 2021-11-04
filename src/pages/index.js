@@ -32,13 +32,15 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
               <PostItem
+                className=""
                 link={post.fields.slug}
                 title={title}
                 date={post.frontmatter.date}
                 description={post.frontmatter.description}
                 excerpt={post.excerpt}
+                category={post.frontmatter.category}
               />
             </li>
           )
@@ -67,6 +69,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          category
         }
       }
     }

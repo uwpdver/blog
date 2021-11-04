@@ -46,7 +46,7 @@ const Layout = ({ location, title, children, to = '/' }) => {
         <nav className="global-nav flex justify-between">
           <ul className="global-nav-list flex sm:space-x-4 divide-y  sm:divide-y-0 sm:space-y-0">
             {
-              menus.map((item, idx) => <li key={idx} className=" text-lg py-3 sm:py-0"><Link className="block w-full" to={item.slug}>{item.name}</Link></li>)
+              menus.map((item, idx) => <li key={idx} className="text-lg py-3 sm:py-0 delay-animate-list-item delay-animate-fade-in fade-in-slide-up sm:delay-animate-none"><Link className="block w-full" to={item.slug}>{item.name}</Link></li>)
             }
           </ul>
         </nav>

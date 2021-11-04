@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import * as React from "react"
 
-const TagItem = ({ link, children }) => {
+const TagItem = ({ className='', link, children }) => {
   return (
-    <li className="tag-item inline-flex items-center justify-center rounded py-1 px-3 mb-2 bg-blue-50">
+    <li className={`${className} tag-item inline-flex items-center justify-center rounded mb-2 bg-blue-50`}>
       <Link to={link} className="tag-item-link">
         {children}
       </Link>

@@ -25,15 +25,16 @@ const Tags = ({ pageContext, data, location }) => {
         <ul style={{ listStyle: 'none' }}>
           {edges.map(({ node }) => {
             const { fields: { slug }, excerpt } = node
-            const { title, date, description } = node.frontmatter
+            const { title, date, description, category } = node.frontmatter
             return (
-              <li key={slug}>
+              <li key={slug} className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
                 <PostItem
                   link={slug}
                   title={title}
                   date={date}
                   description={description}
                   excerpt={excerpt}
+                  category={category}
                 />
               </li>
             )
@@ -59,6 +60,7 @@ Tags.propTypes = {
               title: PropTypes.string.isRequired,
               date: PropTypes.string,
               description: PropTypes.string,
+              category: PropTypes.string,
             }),
             fields: PropTypes.shape({
               slug: PropTypes.string.isRequired,
@@ -95,6 +97,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             description
+            category
           }
         }
       }

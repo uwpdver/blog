@@ -27,14 +27,14 @@ const ProductsPage = ({
         <ul className="space-y-8">
           {products.nodes[0].products.map(
             product => (
-              <li key={product.name}>
+              <li key={product.name} className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
                 <Link to={`/product/${kebabCase(product.name)}`}>
                   <article className="relative rounded-lg overflow-hidden group">
                     <div className="absolute inset-0 bg-white bg-opacity-50 z-10 opacity-0 group-hover:opacity-100" />
                     <img className="" src={product.snapshots[0]?.src} alt="snapshots" />
                     <header className="absolute bottom-0 left-0 w-full h-32 z-20 text-secondary p-4 bg-blue-50 bg-opacity-70 backdrop-blur">
-                      <h4 className="text-2xl font-bold mb-4">{product.name}</h4>
-                      <p className="text-sm line-clamp-2">{product.description}</p>
+                      <h4 className="text-xl font-bold mb-4">{product.name}</h4>
+                      <p className="text-sm line-clamp-2 text-gray-600">{product.description}</p>
                     </header>
                   </article>
                 </Link>

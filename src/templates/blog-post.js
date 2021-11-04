@@ -27,10 +27,10 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header className="mb-4">
           <PageHeading >{post.frontmatter.title}</PageHeading>
-          <p className="text-base mb-2">
+          <p className="text-sm mb-2 text-gray-400">
             <span>{post.frontmatter.date}</span>
           </p>
-          <ul>
+          <ul className="text-sm">
             {post.frontmatter.tags?.map(tag => (
               <TagItem
                 link={`/tags/${kebabCase(tag)}/`}

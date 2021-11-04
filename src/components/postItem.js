@@ -2,23 +2,24 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const PostItem = ({ link, title, date, description, excerpt }) => {
+const PostItem = ({ link, title, date, description, excerpt, category }) => {
   return (
     <article
-      className="post-list-item my-8"
+      className="post-item my-8"
       itemScope
       itemType="http://schema.org/Article"
     >
-      <header className="mb-2">
-        <h2 className="mb-2 text-2xl font-bold">
+      <header className="mb-1">
+        <h2 className="mb-2 text-xl font-bold">
           <Link to={link} itemProp="url">
             <span itemProp="headline">{title}</span>
           </Link>
         </h2>
-        <small>{date}</small>
+        <small className="text-xs text-gray-400">{`${date} | ${category}`}</small>
       </header>
-      <section>
+      <section className="text-base">
         <p
+          className="line-clamp-2"
           dangerouslySetInnerHTML={{
             __html: description || excerpt,
           }}

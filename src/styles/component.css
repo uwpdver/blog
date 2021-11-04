@@ -1,0 +1,7 @@
+.tag-item {
+  padding: 0.4em 1em;
+}
+
+.tag-item:not(:last-child) {
+  margin-right: var(--spacing-2);
+}

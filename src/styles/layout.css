@@ -27,10 +27,6 @@
   max-width: 100%;
 }
 
-.tag-item:not(:last-child) {
-  margin-right: var(--spacing-2);
-}
-
 /* 菜单按钮 */
 .global-menu-btn {
   display: none;
