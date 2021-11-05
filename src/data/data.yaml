@@ -86,3 +86,56 @@ products:
       - item:
         src: https://bl3301files.storage.live.com/y4mOS8IwmgYrQHQtugDroNU7UfLQa3b6UFNP3kWf9MIVk80WWuTmnbBu4KT-mf7glJNMEjk_3DGIuF7C9TFWW4leDJ052vVJo7BZyxVHv0CnbeM8CqLeNPAVf1c8ZiCJ9peVOL7occaFLgdpdl_chp-6VF3YYnVL8093upXfdagamIgiDP_8B_auSVFcFdG6SE9?width=660&height=419&cropmode=none
     siteUrl: https://helloo.world
+showroom:
+  albums:
+    - item:
+      name: 生于未来
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4mpSS3XszJ5YDTMHCXiR36hrrzB34spznuRIaatZqNafy64ZAvhhTZ-V5-RSX0CKNjO9xEjdktyYnKu1a0u_hFo3cNs1lM0hj0PMx8-Hm_fF11V7xzpp7awEqglTVGKnmLAvcPpKqiNcuebOoegsiGhdmCkrjRmH-eXXbNM7C2UojSGUFEZpAEQpmsnp8EsLVF?width=256&height=256&cropmode=none
+    - item:
+      name: 魔杰座
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4mAV0GO6l-gC79KyQDJ-v5JJgcRlKJAAOgmeZw7RFOnJkW5yGZ93Xd6OxJ4owHM8sZQEiAnrGzVc0Dbm1VTx4KesvrEEzQ00BqmOcJxz8GVjFIXJe0h9gpNmB86YdF8ntUNvru_4PXkYNwfMNQmOMYySrywDein6CWsMAiSvj4Qg_GFr3cmKuxk0S8cHw80wif?width=256&height=256&cropmode=none
+    - item:
+      name: 收敛水
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4m_XUzX9zBlPYvzsB4lF-xddlV5h3phNyAoYTL3ixeBDH5U0gArqMEMbEEgL6aE-ixE1PGMi3JCeSmlrGeCD5fMq0bYamPteJI-epFRbOoCXXDbeVJf0pqiB8eARYe0nBOrLzQcllysDAbAkg29MXrd253gNB3pIXAdfgqNYoD6A-cwl71trStCGkO6qrRfzH_?width=256&height=256&cropmode=none      
+    - item:
+      name: 家常音乐
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4m9I69HoQnR5MVwnh_YUkyROs5MmOCcBJFf8CE9mcsVkQEjOXmWtmsQgYd81Fkfhhpmhr1p1roE777rIQNOyg56qSeW-LerXql7n-toFz7gIBKyrGY1YIpb6AiARcfHs1bLmBkirLRk5HcHqOFCyCA3HcyBWa9WiMLVs60CaAbkUUvPWPXWGKwUpvpsCq15BIG?width=256&height=256&cropmode=none      
+  movies:
+    - item:
+      name: 搏击俱乐部
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4mGYWwfYJ7gFZaLzPFhG12gN75qF9e7wgtM17AfrIcrlVBwMuR2loVh_YOsGn8aPFJSIsfs4ldJGfrGq3w2_lXQ2LZD_orkO89rkDmGEvKoEjricvu16HRi7xkoH6QQag44_M05F9PO8mmNPxNl_NC-kvbGhGOsw3mMhlW7pT8567DW8M1zjGaQWB6mcsmGA_O?width=194&height=256&cropmode=none
+    - item:
+      name: 本杰明巴顿奇事
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4m1iV-42_dnEnNvoI4RWBiIoc_SE0b8DlaeDGWmhtjtB9fZBkAfPYfvEZOYOO5RfePM1k487tbef9VDRzTWDbbd7OHQN5L3oH6QNSfMolN3lgXDtNvxRPjDJ5XMgJtuGGnhaYF1cej5HnX-W8fhw-bHw8fs92ZvQcMXldTYM8ZeY1t7NAkYx9S3NYjkw70a5-0?width=173&height=256&cropmode=none
+    - item:
+      name: 无间道
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4mTJIjqF1Oh2l9NiQTB6VKEUYyxLXAouD6sdP7nBwOuLBVJ6A0PPDPkwUpHtaXZa7k7lQKETa2YQ9yso1Pf1kdyoWJbOgcv9PD_-xaExWhO6XYyI0WGAuOKxsIsX38YfKwvQjjYizM5WD_IIX4pBtL-IoVRJki7EvZk0uzUGJJamx4YPtfimBR7ezP3UVVpcBN?width=169&height=256&cropmode=none      
+    - item:
+      name: 你的名字
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4md-JlDLMZv0dT0lwjtKTrAiQTOB6hCvrxZybsozrLABuAOoayOGJllDthHui_W_vcP6gXkKZclkTQx1RC3L2gYhtcj0hYDregiTqnIqUXJAeOLTJcw5aWZy1ecRcq_1jcMGSljvDKDs75KpC_ZfRQVFZP2VAN7S4yuw8OzHuMUgQN9AYvCceSY4XESBT3uU7a?width=183&height=256&cropmode=none      
+    - item:
+      name: 侧耳倾听
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4msnEem-9vvACqxvHTphORo-Fb1cB7y8YbRpOhoEj4z_pjgCyRNr5Zo8vzscPgCC8tSse6ZQiUzZ91oDqLuOPxR84PXSLbknnQiCWslA5zfgTD9O7IrIEey9zY5uImeCsKqQHvDF02WZE0yHPO8dreTwXH0jV5roCwm8eyYaIMgNxiCdoMbWpsWDArx0n58B_g?width=182&height=256&cropmode=none      
+    - item:
+      name: 阿甘正传
+      category: ''
+      description: ''
+      image: https://bl3301files.storage.live.com/y4mj7hUP9pefU9VVW8otzTlmFtl4XUxl7jyMrM4X6rLOmX-aBzGnOgLgUcHfQOn3CsWnDmvWEApQUkkXPyVKShW2FxEM4o7g_BJEDJPP3vASIfi6EwX5Ctbg6aUFXT_9_kXLOzU69mjiIQ3rtrbsaKh8FDj2n0Jp4BKQO9Wp_M_CWJdabklQi7LKJdB4X13gG-p?width=194&height=256&cropmode=none      

@@ -20,6 +20,10 @@ module.exports = {
         slug: '/products'
       },
       {
+        name: '陈列室',
+        slug: '/showroom'
+      },
+      {
         name: '关于',
         slug: '/about'
       },
