@@ -77,7 +77,8 @@ skills:
 products:
   - 
     name: Nofeeding
-    description: Nofeeding 一个在线RSS阅读器，通过 RSS 追踪自己喜爱的网站的内容更新，该阅读器旨在提供高效可控且令人舒适的新闻阅读体验。在提供了 RSS 阅读器的基本功能的基础之外，还可以在明亮主题和黑暗主题之间切换，支持多种文章布局方式，适配了从桌面设备到移动设备，支持 PWA 渐进式网页应用，提供了简洁美观，响应性良好，可自定义的用户界面。
+    longName: Nofeeding 一个在线RSS阅读器
+    description: 通过 RSS 追踪自己喜爱的网站的内容更新，该阅读器旨在提供高效可控且令人舒适的新闻阅读体验。在提供了 RSS 阅读器的基本功能的基础之外，还可以在明亮主题和黑暗主题之间切换，支持多种文章布局方式，适配了从桌面设备到移动设备，支持 PWA 渐进式网页应用，提供了简洁美观，响应性良好，可自定义的用户界面。
     snapshots: 
       - item:
         src: https://bl3301files.storage.live.com/y4m1hb517fVoknDsmLquyyGz-6uHUjTBY9oiwJ21K70bWgFqP5X1HAn3INxhE9O3QdMAvtEL5iGnsuLa6K8uLMenj9NjMfJrVv_lQjt_Vr2jXnZDOc4XCtZFhjan335EzCf1ldk0Lfg8AXT5hI6eAWPg6JcQNaNrDPSMtyE8ETLVnwv8NwLBAPKXfqybJ93Ns5b?width=660&height=371&cropmode=none
