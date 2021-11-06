@@ -1,7 +1,13 @@
+---
 title: JavaScript面向对象——继承
 date: 2021-11-07 00:45
 description: 本文是阅读《JavaScript 高级程序设计》面向对象的程序设计一章的笔记，记录了一些知识要点和示例代码。主要内容是 JavaScript 中的继承相关的知识。其中包括：原型链，借用构造函数方式实现继承，原型式继承，寄生式继承等等。
-
+category: 笔记
+tags:
+- "笔记"
+- "JavaScript"
+- "面向对象"
+---
 ### 继承
 
 ECMAScript 继承实现继承主要是依赖原型链来实现的。  
