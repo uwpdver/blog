@@ -118,7 +118,7 @@ function performUnitOfWork(fiber){
 }
 ```
 
-### 提交
+## 提交
 如果每次处理一个工作单元都创建并添加一个 DOM 节点到 DOM 树中，那么用于会看到未完成的界面，这样不好。  
 
 我们使用一个 working in process root 追踪 fiber tree root。  
@@ -146,7 +146,7 @@ function commitWork(fiber){
 
 递归地添加所有 fiber 的 DOM 节点到 DOM 树中。  
 
-### 协调
+## 协调
 
 到目前位置我们只是添加东西到 DOM 中，但是更新或者删除节点是怎么样的呢。  
 

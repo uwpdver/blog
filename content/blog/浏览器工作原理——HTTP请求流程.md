@@ -10,7 +10,7 @@ tags:
 - "HTTP"
 - "浏览器工作原理"
 ---
-### HTTP 请求流程
+## HTTP 请求流程
 ![HTTP 请求流程示意图](https://bl3301files.storage.live.com/y4msr6Uc6wYHTsbX_u5y-DOad3OueQXHcOqb1MGUUNZPY-VZL5DWNP1xU1HNF5rQfDPO54I-mImOk9J2Q_dJxsARjxkWQpyd9NeQDoogErqBO1UaGTZVbss1JGHOba9ENbuJX_NejYXzcBd86dQRLP7VgGDGkmRNv1U0xvhtvW19KrZLJBtsurVtmG1lA4djMLy?width=1142&height=423&cropmode=none "HTTP 请求流程示意图")  
 
 1. 构建请求
@@ -27,14 +27,14 @@ tags:
     - 服务器返回响应体
 8. 断开 TCP 连接
 
-### 浏览器缓存
-#### 强缓存
+## 浏览器缓存
+### 强缓存
 不会向服务器发送任何请求，直接从本地缓存中读取并且返回状态码：200 OK。
 200 from memory cache：缓存在内存中，从内存中读取，浏览器关闭则丢失。
 200 from disk cache：缓存在磁盘中，从磁盘中读取，浏览器关闭仍然存在。  
 优先级：memory cache > disk cache > network
 
-#### 协商缓存
+### 协商缓存
 向服务器发送请求，服务器根据这个请求头部中的一些参数判断是否命中协商缓存，如果命中，则返回 304 状态码，并带上新的响应头部通知浏览器从缓存中读取资源。
 ![浏览协商缓存机制流程图](https://bl3301files.storage.live.com/y4mulom0HnZDweCxsXb1AGyz8wwE_5m_talDCI9hWol5x2HjRVyMVD_CeIBV7Rr_AuYegs5eW715ER9NRf5a7-SZE7LgsEHEYff99S015zMVUp2EE8TAmErXCkzGTV7xJS9sDQKg_dAUe15WJaD9JybZogDADtYJvABx8XCZDLhfGI7MNZYGrbz2hRZAD1uNvly?width=627&height=884&cropmode=none "浏览协商缓存机制流程图")  
 
@@ -55,19 +55,19 @@ If-Modified-Since：
 - Etag优先级是高于Last-Modifed 的，所以服务器会优先验证 Etag
 - Last-Modifed/If-Modified-Since 是http1.0的头字段  
 
-### DNS  
+## DNS  
 HTTP 协议是基于 TCP/IP 的，建立 TCP 连接需要 IP 地址，对于用户而言代表网络资源的 URL 中提供的都是便于记忆的域名，所以就需要 DNS 将域名转换成 IP，浏览器提供 DNS 缓存。  
 
-### 最大连接数
+## 最大连接数
 同一个域名下最多拥有 6 个已建立的 TCP 连接。多出的请求会排队等待，直至有可用的连接。  
 
-### 请求行格式
-#### HTTP 请求行
+## 请求行格式
+### HTTP 请求行
 | 请求方法 | 请求URL | 协议版本 |  
 | --- | --- | --- |
 | GET | /library?search=news | HTTP/1.1 |
 
-#### HTTP 响应行
+### HTTP 响应行
 | 协议版本 | 状态码 |  
 | --- | --- |
 | HTTP/1.1 | 200 OK |

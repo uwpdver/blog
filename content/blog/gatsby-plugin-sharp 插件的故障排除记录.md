@@ -30,7 +30,7 @@ tags:
    5. 继续搜索安装 sharp 的错误，看到 `gatsby-plugin-sharp` 的[官方文档](https://www.gatsbyjs.com/plugins/gatsby-plugin-sharp/#troubleshooting)中的故障排除，发现有可能是依赖 sharp 的包版本与 `Gatsby 4.x` 版本不兼容，需要更新。通过 `yarn why sharp` 命令查看有哪些包依赖 sharp，然后逐个将这些包升级到最新版本，运行 `gatsby build` 命令验证。结果还是出现和之前一样的报错。
    6. 执行 `yarn why sharp` 命令查看当前已安装的 sharp 的版本是否与依赖 sharp 的包所需的版本一致，检查之后发现差了 0.0.1 个版本号。又发现 sharp 被添加到了当前项目的依赖中，于是通过 `yarn remove sharp` 命令将当前的 sharp 移除。运行 `gatsby build` 命令验证。结果构建成功。
 
-   #### 结论
+   ### 结论
 
    最终的原因就是**当前安装的 gatsby 插件版本与当前安装的 gatsby 版本不兼容**，解决方案就是**找到报错相关的插件，更新它们**。但是根据 npm 给出的报错信息，我根本找不到问题的原因，所以走了很多弯路。
 
