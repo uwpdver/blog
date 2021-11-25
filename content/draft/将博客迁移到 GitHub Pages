@@ -1,0 +1,18 @@
+---
+title: 将博客迁移到 GitHub Pages
+date: 2021-11-25 14:28
+description: 用 GitHub Pages 和 Github Action 实现博客的托管和自动化部署。
+category: 笔记
+tags:
+- "博客"
+- "Github Action"
+- "Github Pages"
+---
+
+
+
+## 相关阅读
+
+* [Gatsby Publish](https://github.com/marketplace/actions/gatsby-publish)
+* [GitHub Actions入门教程-自动部署静态博客](https://zhuanlan.zhihu.com/p/364366127)
+
