@@ -17,7 +17,7 @@ Github 也提供了类似的 Github Pages 服务。而且Github Action 也可以
 
 ### access token
 
-在 Gatsby Publish 配置中，有一个 `${{secrets.ACCESS_TOKEN}}` 的写法。这里的 `secrets` 是 Action 在运行时可以访问到上下文的一个变量，这些变量在仓库的设置页面的 Secrets 菜单中添加。access token 是用来授权的，也需要在 [Github Personal Access Tokens 管理页面](https://github.com/settings/tokens) 手动生成。并且将生成的 access token 添加到仓库的 secrets 中，注意变量名是 ACCESS_TOKEN。 
+在 Gatsby Publish 配置中，有一个 `${{secrets.ACCESS_TOKEN}}` 的写法。这里的 `secrets` 是 Action 在运行时可以访问到上下文的一个变量，这些变量在仓库的设置页面的 Secrets 菜单中添加。access token 是用来授权的，也需要在 [Github Personal Access Tokens 管理页面](https://github.com/settings/tokens) 手动生成。并且将生成的 access token 添加到仓库的 secrets 中，注意变量名是 ACCESS_TOKEN。access token 默认会过期，access token 过期了自动部署脚本的运行会发生错误，为了方便可以将其设置为永不过期。 
 
 ### deploy-repo  
 
