@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageHeading from "../components/pageHeading"
 import TagItem from "../components/tagItem"
+import { motion } from 'framer-motion';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -25,7 +26,7 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header className="mb-4 delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
+        <motion.header className="mb-4">
           <PageHeading >{post.frontmatter.title}</PageHeading>
           <p className="text-sm mb-2 text-gray-400">
             <span>{post.frontmatter.date}</span>
@@ -40,9 +41,9 @@ const BlogPostTemplate = ({ data, location }) => {
               </TagItem>
             ))}
           </ul>
-        </header>
+        </motion.header>
         <section
-          className="prose pt-4 pb-8 delay-animate-list-item delay-animate-fade-in fade-in-slide-up"
+          className="prose pt-4 pb-8"
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />

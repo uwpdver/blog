@@ -1,10 +1,12 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
+import { motion } from 'framer-motion';
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostItem from "../components/postItem"
+import { listContainer, listItem } from '../common'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -28,11 +30,19 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="全部文章" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <motion.ul
+        className="list-style-none"
+        variants={listContainer}
+        initial="hidden"
+        animate="show"
+      >
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
-            <li key={post.fields.slug} className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
+            <motion.li
+              key={post.fields.slug}
+              variants={listItem}
+            >
               <PostItem
                 className=""
                 link={post.fields.slug}
@@ -42,10 +52,10 @@ const BlogIndex = ({ data, location }) => {
                 excerpt={post.excerpt}
                 category={post.frontmatter.category}
               />
-            </li>
+            </motion.li>
           )
         })}
-      </ol>
+      </motion.ul>
     </Layout>
   )
 }

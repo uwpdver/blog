@@ -7,6 +7,8 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PageHeading from "../components/pageHeading"
+import { motion } from 'framer-motion';
+import { listItem, listContainer } from '../common';
 
 const ProductsPage = ({
   data: {
@@ -24,10 +26,10 @@ const ProductsPage = ({
       <Helmet title={pageTitle} />
       <div className="tags-page">
         <PageHeading>{pageTitle}</PageHeading>
-        <ul className="space-y-8">
+        <motion.ul className="space-y-8" variants={listContainer}>
           {products.nodes[0].products.map(
             product => (
-              <li key={product.name} className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
+              <motion.li key={product.name} variants={listItem}>
                 <Link to={`/product/${kebabCase(product.name)}`}>
                   <article className="relative grid sm:grid-cols-2 sm:grid-rows-1">
                     <img className="rounded-lg sm:rounded-none sm:col-start-2" src={product.snapshots[0]?.src} alt="snapshots" />
@@ -37,10 +39,10 @@ const ProductsPage = ({
                     </header>
                   </article>
                 </Link>
-              </li>
+              </motion.li>
             )
           )}
-        </ul>
+        </motion.ul>
       </div>
     </Layout>
   )

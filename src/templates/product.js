@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Section from "../components/productPageSection"
+import Section from "../components/Section"
 
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'

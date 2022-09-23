@@ -27,7 +27,7 @@ const Tags = ({ pageContext, data, location }) => {
             const { fields: { slug }, excerpt } = node
             const { title, date, description, category } = node.frontmatter
             return (
-              <li key={slug} className="delay-animate-list-item delay-animate-fade-in fade-in-slide-up">
+              <li key={slug}>
                 <PostItem
                   link={slug}
                   title={title}
