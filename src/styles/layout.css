@@ -1,4 +1,9 @@
 /* Custom classes */
+
+.root-container {
+  margin-left: calc(100vw - 100%);
+}
+
 .global-wrapper[data-is-root-path="true"] .bio {
   margin-bottom: var(--spacing-12);
 }
