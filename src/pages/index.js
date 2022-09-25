@@ -1,12 +1,10 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import { motion } from 'framer-motion';
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PostItem from "../components/postItem"
-import { listContainer, listItem } from '../common'
+import PostList from "../components/PostList"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -17,11 +15,7 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <Seo title="全部文章" />
         <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <p>还没有发布文章。</p>
       </Layout>
     )
   }
@@ -30,32 +24,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="全部文章" />
       <Bio />
-      <motion.ul
-        className="list-style-none"
-        variants={listContainer}
-        initial="hidden"
-        animate="show"
-      >
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-          return (
-            <motion.li
-              key={post.fields.slug}
-              variants={listItem}
-            >
-              <PostItem
-                className=""
-                link={post.fields.slug}
-                title={title}
-                date={post.frontmatter.date}
-                description={post.frontmatter.description}
-                excerpt={post.excerpt}
-                category={post.frontmatter.category}
-              />
-            </motion.li>
-          )
-        })}
-      </motion.ul>
+      <PostList posts={posts} />
     </Layout>
   )
 }
@@ -76,7 +45,7 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY年MM月DD日")
           title
           description
           category

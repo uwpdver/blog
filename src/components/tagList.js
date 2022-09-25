@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { motion } from 'framer-motion';
 import kebabCase from "lodash/kebabCase"
 import TagItem from "./tagItem"
 
@@ -19,7 +19,7 @@ const TagList = () => {
   const group = data.tagsGroup.group;
 
   return (
-    <ul>
+    <motion.ul className="flex flex-wrap">
       {group.map(tag => (
         <TagItem
           link={`/tags/${kebabCase(tag.fieldValue)}/`}
@@ -28,7 +28,7 @@ const TagList = () => {
           {tag.fieldValue} ({tag.totalCount})
         </TagItem>
       ))}
-    </ul>
+    </motion.ul>
   )
 }
 

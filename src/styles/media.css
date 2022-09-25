@@ -11,14 +11,7 @@
       padding: var(--spacing-4) var(--spacing-4);
     }
   
-    .global-nav-list {
-      background-color: white;
-      position: absolute;
-      top: 100%;
-      left: 0;
-  
-      flex-direction: column;
-      width: 100%;
+    .global-nav {  
       padding: var(--spacing-4) var(--spacing-5);
     }
   

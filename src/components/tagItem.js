@@ -1,13 +1,14 @@
-import { Link } from "gatsby"
 import * as React from "react"
+import { Link } from "gatsby"
+import { motion } from 'framer-motion';
 
 const TagItem = ({ className='', link, children }) => {
   return (
-    <li className={`${className} tag-item inline-flex items-center justify-center rounded mb-2 bg-blue-50`}>
-      <Link to={link} className="tag-item-link">
+    <motion.li className={`mr-2 py-2 px-4 inline-flex items-center text-sm justify-center rounded mb-2 bg-blue-50 ${className}`}>
+      <Link to={link} >
         {children}
       </Link>
-    </li>
+    </motion.li>
   )
 }
 

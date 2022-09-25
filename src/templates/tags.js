@@ -7,14 +7,14 @@ import TagList from "../components/tagList"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PostItem from "../components/postItem"
 import PageHeading from "../components/pageHeading"
+import PostList from "../components/PostList"
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${tag}：${totalCount} 篇文章`
-
+  const posts = edges.map(({ node }) => node);
   return (
     <Layout location={location} title="全部标签" to="/tags">
       <Seo title={tagHeader} />
@@ -22,24 +22,7 @@ const Tags = ({ pageContext, data, location }) => {
       <div className="tags-page">
         <PageHeading >{tagHeader}</PageHeading>
         <TagList />
-        <ul style={{ listStyle: 'none' }}>
-          {edges.map(({ node }) => {
-            const { fields: { slug }, excerpt } = node
-            const { title, date, description, category } = node.frontmatter
-            return (
-              <li key={slug}>
-                <PostItem
-                  link={slug}
-                  title={title}
-                  date={date}
-                  description={description}
-                  excerpt={excerpt}
-                  category={category}
-                />
-              </li>
-            )
-          })}
-        </ul>
+        <PostList posts={posts} />
       </div>
     </Layout>
   )
