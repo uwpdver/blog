@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `要没时间了的博客`,
@@ -157,5 +161,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-douban',
+      options: {
+        path: `${__dirname}/static/images`,
+        musiclistId: process.env.MUSIC_LIST_ID,
+        filmlistId: process.env.FILM_LIST_ID,
+      }
+    }
   ],
 }

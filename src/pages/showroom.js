@@ -11,8 +11,8 @@ import { listContainer, listItem } from "../common";
 
 const ShowroomPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const albums = data.allYaml.nodes[0].showroom.albums
-  const movies = data.allYaml.nodes[0].showroom.movies
+  const albums = data.allDoubanFavoriteMusic.edges.map(({ node }) => node);
+  const films = data.allDoubanFavoriteFilm.edges.map(({ node }) => node);
 
   const pageTitle = '陈列室';
   return (
@@ -24,23 +24,23 @@ const ShowroomPage = ({ data, location }) => {
         <Section title="">
           这里是我的陈列室，展示我的喜好和收藏。仅仅是展示，请勿触碰哦。
         </Section>
-        <Section title="💿 音乐" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {albums.map(({ name, image }) => (
-            <motion.div variants={listItem} key={name}>
+        <Section title="💿 最喜欢的专辑" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {albums.map(({ id, title, cover }) => (
+            <motion.div variants={listItem} key={id}>
               <div className="relative rounded-lg shadow-lg overflow-hidden">
-                <img className="w-full album-cover" src={image} loading="lazy" alt="" />
+                <img className="w-full album-cover" src={`/images/${cover}`} loading="lazy" alt="" />
               </div>
-              <div className="mt-3 line-clamp-1 text-sm font-semibold" title={name}>{name}</div>
+              <div className="mt-3 line-clamp-1 text-sm font-semibold text-center" title={title}>{title}</div>
             </motion.div>
           ))}
         </Section>
-        <Section title="📽️ 电影" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {movies.map(({ name, image }) => (
-            <motion.div variants={listItem} key={name}>
+        <Section title="📽️ 最喜欢的影视" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {films.map(({ id, title, cover }) => (
+            <motion.div variants={listItem} key={id}>
               <div className="relative">
-                <img className="w-full rounded-lg shadow-lg movie-poster" src={image} loading="lazy" alt="" />
+                <img className="w-full rounded-lg shadow-lg movie-poster" src={`/images/${cover}`} loading="lazy" alt="" />
               </div>
-              <div className="mt-3 line-clamp-1 text-sm font-semibold" title={name}>{name}</div>
+              <div className="mt-3 line-clamp-1 text-sm font-semibold text-center" title={title}>{title}</div>
             </motion.div>
           ))}
         </Section>
@@ -73,6 +73,22 @@ export const pageQuery = graphql`
             description
             image
           }
+        }
+      }
+    }
+    allDoubanFavoriteMusic {
+      edges {
+        node {
+          cover
+          title
+        }
+      }
+    }
+    allDoubanFavoriteFilm {
+      edges {
+        node {
+          cover
+          title
         }
       }
     }
