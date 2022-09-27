@@ -1,3 +1,25 @@
 .backdrop-blur {
     backdrop-filter: blur(8px);
 }
+
+.flash {
+    overflow: hidden;
+}
+
+.flash:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.flash::after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: radial-gradient(circle at center,  transparent 0, rgba(255, 255, 255, 0.4) 100%);
+    transform: scale(2);
+    transition: all 340ms;
+}

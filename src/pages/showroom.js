@@ -27,8 +27,8 @@ const ShowroomPage = ({ data, location }) => {
         <Section title="💿 最喜欢的专辑" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {albums.map(({ id, title, cover }) => (
             <motion.div variants={listItem} key={id}>
-              <div className="relative rounded-lg shadow-lg overflow-hidden">
-                <img className="w-full album-cover" src={`/images/${cover}`} loading="lazy" alt="" />
+              <div className="relative shadow-lg flash">
+                <img className="w-full album-cover rounded-lg" src={`/images/${cover}`} loading="lazy" alt="" />
               </div>
               <div className="mt-3 line-clamp-1 text-sm font-semibold text-center" title={title}>{title}</div>
             </motion.div>
@@ -37,8 +37,8 @@ const ShowroomPage = ({ data, location }) => {
         <Section title="📽️ 最喜欢的影视" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {films.map(({ id, title, cover }) => (
             <motion.div variants={listItem} key={id}>
-              <div className="relative">
-                <img className="w-full rounded-lg shadow-lg movie-poster" src={`/images/${cover}`} loading="lazy" alt="" />
+              <div className="relative shadow-lg flash">
+                <img className="w-full movie-poster rounded-lg " src={`/images/${cover}`} loading="lazy" alt="" />
               </div>
               <div className="mt-3 line-clamp-1 text-sm font-semibold text-center" title={title}>{title}</div>
             </motion.div>
