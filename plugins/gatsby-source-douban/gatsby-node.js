@@ -34,7 +34,6 @@ const parseHTML = (document) => {
       if (!id) {
         console.error('link element not find:', item.childNodes.length);
         if (item.childNodes.length) {
-          item.childNodes.forEach()
           let len = item.childNodes.length;
           for (var i = 0; i < len; i++) {
             console.log('item.childNodes[i]', item.childNodes[i])
