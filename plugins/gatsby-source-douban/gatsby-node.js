@@ -21,16 +21,12 @@ const downloadImage = async (url, imageDirPath) => {
 
 const parseHTML = (document) => {
   const $ = cheerio.load(document);
-  const itemSelector = 'ul.doulist-items li';
+  const itemSelector = 'ul.doulist-items li > a';
   console.log('ul text', $('ul.doulist-items').html());
   let results = [];
   try {
     $(itemSelector).each((index, item) => {
-      const elParsed = $(item);
-      if (!elParsed || elParsed.last === 0) {
-        throw new Error('item element not find')
-      }
-      const link = elParsed.find('a').first().attr('href');
+      const link = item.attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
         throw new Error('link element not find:');
