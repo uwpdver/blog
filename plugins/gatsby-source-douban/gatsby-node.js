@@ -29,6 +29,7 @@ const parseHTML = (document) => {
       if (!elParsed || elParsed.last === 0) {
         throw new Error('item element not find')
       }
+      console.log('a tag:', elParsed.children('a').text())
       const link = elParsed.children('a').first().attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
@@ -82,7 +83,6 @@ exports.sourceNodes = async (
     axios.get(url)
       .then((res) => {
         console.log("status", res.status);
-        console.log("status", res.data);
         return res.data;
       })
       .then(parseHTML)
