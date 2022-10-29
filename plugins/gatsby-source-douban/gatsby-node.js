@@ -23,25 +23,25 @@ const parseHTML = (document) => {
   const $ = cheerio.load(document);
   const itemSelector = 'ul.doulist-items li > a';
   let results = [];
-  try {
-    $(itemSelector).each((index, item) => {
+  $(itemSelector).each((index, item) => {
+    try {
       const link = item.attribs['href'];
       const id = link?.split('/')?.pop();
       if (!id) {
         throw new Error('link element not find:');
       }
-      const coverImageSrc = item.find('.cover img').attr('src') ?? null;
-      const title = item.find('.title').text() ?? '';
+      const el = $(item);
+      const coverImageSrc = el.find('.cover img').attr('src') ?? null;
+      const title = el.find('.title').text() ?? '';
       results.push({
         id,
         cover: coverImageSrc,
         title: title,
       })
-    });
-  } catch (error) {
-    console.log('parse html document error:', error)
-  }
-  console.log('results', results)
+    } catch (error) {
+      console.log('parse html document error:', error)
+    }
+  });
   return results;
 }
 
