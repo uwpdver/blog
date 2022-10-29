@@ -32,7 +32,7 @@ const parseHTML = (document) => {
       const link = elParsed.children('a').first().attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
-        console.error('link element not find:', item);
+        console.error('link element not find:', item.stringify());
         throw new Error('link element not find:');
       }
       const coverImageSrc = elParsed.find('.cover img').attr('src') ?? null;
