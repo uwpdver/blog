@@ -72,7 +72,12 @@ exports.sourceNodes = async (
 
   const createItemHandler = (type) => (url) =>
     axios.get(url)
-      .then((res) => res.data)
+      .then((res) => {
+        consol.log("data", res.data);
+        consol.log("headers", res.headers);
+        consol.log("status", res.status);
+        return res.data;
+      })
       .then(parseHTML)
       .then((items) =>
         Promise.all(
