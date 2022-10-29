@@ -45,6 +45,7 @@ const parseHTML = (document) => {
   } catch (error) {
     console.log('parse html document error:', error)
   }
+  console.log('results', results)
   return results;
 }
 
