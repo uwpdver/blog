@@ -22,7 +22,6 @@ const downloadImage = async (url, imageDirPath) => {
 const parseHTML = (document) => {
   const $ = cheerio.load(document);
   const itemSelector = 'ul.doulist-items li > a';
-  console.log('ul text', $('ul.doulist-items').html());
   let results = [];
   try {
     $(itemSelector).each((index, item) => {
