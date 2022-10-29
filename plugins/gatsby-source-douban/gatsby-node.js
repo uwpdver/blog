@@ -22,6 +22,7 @@ const downloadImage = async (url, imageDirPath) => {
 const parseHTML = (document) => {
   const $ = cheerio.load(document);
   const itemSelector = 'ul.doulist-items li';
+  console.log('ul text', $('ul.doulist-items').text());
   let results = [];
   try {
     $(itemSelector).each((index, item) => {
@@ -29,7 +30,6 @@ const parseHTML = (document) => {
       if (!elParsed || elParsed.last === 0) {
         throw new Error('item element not find')
       }
-      console.log('a tag:', elParsed.text())
       const link = elParsed.children('a').first().attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
