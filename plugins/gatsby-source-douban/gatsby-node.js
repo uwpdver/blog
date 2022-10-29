@@ -31,8 +31,8 @@ const parseHTML = (document) => {
       if (!id) {
         throw new Error('link element not find:');
       }
-      const coverImageSrc = elParsed.find('.cover img').attr('src') ?? null;
-      const title = elParsed.find('.title').text() ?? '';
+      const coverImageSrc = item.find('.cover img').attr('src') ?? null;
+      const title = item.find('.title').text() ?? '';
       results.push({
         id,
         cover: coverImageSrc,
