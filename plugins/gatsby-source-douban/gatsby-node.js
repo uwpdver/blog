@@ -26,7 +26,7 @@ const parseHTML = (document) => {
   let results = [];
   try {
     $(itemSelector).each((index, item) => {
-      const link = item.attr('href');
+      const link = item.attribs['href'];
       const id = link?.split('/')?.pop();
       if (!id) {
         throw new Error('link element not find:');
