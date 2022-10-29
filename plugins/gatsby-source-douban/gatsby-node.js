@@ -7,28 +7,44 @@ const downloadImage = async (url, imageDirPath) => {
   const name = url.split('/').pop();
   const savePath = path.resolve(imageDirPath, name)
   if (fs.existsSync(savePath)) return name;
-  const res = await axios.get(url, { responseType: 'stream' });
-  res.data.pipe(fs.createWriteStream(savePath))
-  return new Promise((resolve, reject) => {
-    res.data.on('end', () => resolve(name))
-    res.data.on('error', () => reject())
-  })
+  try {
+    const res = await axios.get(url, { responseType: 'stream' });
+    res.data.pipe(fs.createWriteStream(savePath))
+    return new Promise((resolve, reject) => {
+      res.data.on('end', () => resolve(name))
+      res.data.on('error', (error) => reject(error))
+    })
+  } catch (error) {
+    console.log('image download fail:', error)
+  }
 }
 
 const parseHTML = (document) => {
   const $ = cheerio.load(document);
   const itemSelector = 'ul.doulist-items li';
   let results = [];
-  $(itemSelector).each((index, item) => {
-    const elParsed = $(item);
-    const id = elParsed.find('a').attr('href').split('/').pop();
-    const cover = elParsed.find('.cover img').attr('src');
-    results.push({
-      id: id,
-      cover: cover,
-      title: elParsed.find('.title').text(),
-    })
-  });
+  try {
+    $(itemSelector).each((index, item) => {
+      const elParsed = $(item);
+      if (!elParsed || elParsed.last === 0) {
+        throw new Error('item element not find')
+      }
+      const link = elParsed.children('a').first().attr('href');
+      const id = link?.split('/')?.pop();
+      if (!id) {
+        throw new Error('link element not find:')
+      }
+      const coverImageSrc = elParsed.find('.cover img').attr('src') ?? null;
+      const title = elParsed.find('.title').text() ?? '';
+      results.push({
+        id,
+        cover: coverImageSrc,
+        title: title,
+      })
+    });
+  } catch (error) {
+    console.log('parse html document error:', error)
+  }
   return results;
 }
 
@@ -67,6 +83,9 @@ exports.sourceNodes = async (
         )
       )
       .then(items => items.forEach(processItem))
+      .catch(error => {
+        console.log(error);
+      })
 
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins
