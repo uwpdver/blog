@@ -73,8 +73,6 @@ exports.sourceNodes = async (
   const createItemHandler = (type) => (url) =>
     axios.get(url)
       .then((res) => {
-        console.log("data", res.data);
-        console.log("headers", res.headers);
         console.log("status", res.status);
         return res.data;
       })
