@@ -29,7 +29,7 @@ const parseHTML = (document) => {
       if (!elParsed || elParsed.last === 0) {
         throw new Error('item element not find')
       }
-      console.log('a tag:', elParsed.children('a').text())
+      console.log('a tag:', elParsed.text())
       const link = elParsed.children('a').first().attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
