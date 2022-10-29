@@ -32,7 +32,14 @@ const parseHTML = (document) => {
       const link = elParsed.children('a').first().attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
-        console.error('link element not find:', item.firstChild?.textContent);
+        console.error('link element not find:', item.childNodes.length);
+        if (item.childNodes.length) {
+          item.childNodes.forEach()
+          let len = item.childNodes.length;
+          for (var i = 0; i < len; i++) {
+            console.log('item.childNodes[i]', item.childNodes[i])
+          };
+        }
         throw new Error('link element not find:');
       }
       const coverImageSrc = elParsed.find('.cover img').attr('src') ?? null;
