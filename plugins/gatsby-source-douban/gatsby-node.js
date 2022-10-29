@@ -82,6 +82,7 @@ exports.sourceNodes = async (
     axios.get(url)
       .then((res) => {
         console.log("status", res.status);
+        console.log("status", res.data);
         return res.data;
       })
       .then(parseHTML)
