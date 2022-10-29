@@ -30,16 +30,9 @@ const parseHTML = (document) => {
       if (!elParsed || elParsed.last === 0) {
         throw new Error('item element not find')
       }
-      const link = elParsed.children('a').first().attr('href');
+      const link = elParsed.find('a').first().attr('href');
       const id = link?.split('/')?.pop();
       if (!id) {
-        console.error('link element not find:', item.childNodes.length);
-        if (item.childNodes.length) {
-          let len = item.childNodes.length;
-          for (var i = 0; i < len; i++) {
-            console.log('item.childNodes[i]', item.childNodes[i])
-          };
-        }
         throw new Error('link element not find:');
       }
       const coverImageSrc = elParsed.find('.cover img').attr('src') ?? null;
