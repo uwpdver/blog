@@ -24,7 +24,7 @@ const ShowroomPage = ({ data, location }) => {
         <Section title="">
           这里是我的陈列室，展示我的喜好和收藏。仅仅是展示，请勿触碰哦。
         </Section>
-        <Section title="💿 最喜欢的专辑" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <Section title="💿 最喜欢的专辑" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-5">
           {albums.map(({ id, title, cover }) => (
             <motion.div variants={listItem} key={id}>
               <div className="relative shadow-lg flash">
@@ -34,7 +34,7 @@ const ShowroomPage = ({ data, location }) => {
             </motion.div>
           ))}
         </Section>
-        <Section title="📽️ 最喜欢的影视" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <Section title="📽️ 最喜欢的影视" contentClassName="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-5">
           {films.map(({ id, title, cover }) => (
             <motion.div variants={listItem} key={id}>
               <div className="relative shadow-lg flash">

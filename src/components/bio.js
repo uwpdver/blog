@@ -27,21 +27,21 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
 
   return (
-    <Link className="flex mb-12 p-6 rounded-3xl bg-blue-50 text-secondary" to="/about">
+    <Link className="flex items-center mb-12 text-secondary" to="/about">
       <StaticImage
         className="mr-4 rounded-full flex-shrink-0"
         layout="fixed"
         formats={["AUTO", "WEBP", "AVIF"]}
         src="../images/profile-pic.jpg"
-        width={50}
-        height={50}
-        quality={95}
+        width={64}
+        height={64}
+        quality={75}
         alt="Profile picture"
       />
       <div>
-        <p>
+        {/* <p>
           这里是<strong>{author?.name}</strong>
-        </p>
+        </p> */}
         <p className="line-clamp-2">
           {author?.summary || null}
         </p>

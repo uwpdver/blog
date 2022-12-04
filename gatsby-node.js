@@ -79,14 +79,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-  const tagTemplate = path.resolve(`./src/templates/tags.js`)
+  const PostsTemplate = path.resolve(`./src/templates/posts.js`);
   const tags = result.data.tagsGroup.group
+  createPage({
+    path: `/posts`,
+    component: PostsTemplate,
+    context: { tags: tags.map(tag => tag.fieldValue) },
+  })
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
+      path: `/posts/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: PostsTemplate,
       context: {
-        tag: tag.fieldValue,
+        tags: [tag.fieldValue],
       },
     })
   })

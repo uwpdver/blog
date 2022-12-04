@@ -7,7 +7,7 @@ module.exports = {
     title: `要没时间了的博客`,
     author: {
       name: `要没时间了`,
-      summary: `职业是前端开发，早餐喜欢吃 711 的芝士猪排饭团。喜欢写代码，爱折腾`,
+      summary: `我是要没时间了，这是我的博客，我在这里记录和分享一些的我知道的东西。`,
     },
     menus: [
       {
@@ -15,8 +15,8 @@ module.exports = {
         slug: '/'
       },
       {
-        name: '标签',
-        slug: '/tags'
+        name: '文章',
+        slug: '/posts'
       },
       {
         name: '作品',
@@ -70,6 +70,10 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        tableOfContents: {
+          heading: null,
+          maxDepth: 6,
+        },
         plugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -167,6 +171,14 @@ module.exports = {
         path: `${__dirname}/static/images`,
         musiclistId: process.env.MUSIC_LIST_ID,
         filmlistId: process.env.FILM_LIST_ID,
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
       }
     }
   ],

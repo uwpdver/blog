@@ -26,9 +26,9 @@ const Layout = ({ location, title, children, to = '/', }) => {
 
   return (
     <div className="root-container">
-      <div className="global-wrapper my-0 mx-auto max-w-2xl" data-is-root-path={isRootPath}>
+      <div className="global-wrapper my-0 mx-auto max-w-7xl" data-is-root-path={isRootPath}>
         <GlobalHeader title={title} to={to} menus={menus} />
-        <main className="py-0 px-5">{children}</main>
+        <div className="py-0 px-5">{children}</div>
         <footer className="p-5 text-sm text-gray-400">
           © {new Date().getFullYear()}, {description}
         </footer>

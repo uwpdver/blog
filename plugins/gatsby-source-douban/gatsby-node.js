@@ -1,101 +1,58 @@
 const axios = require('axios').default;
-const cheerio = require('cheerio');
-const fs = require('fs');
-const path = require('path');
-
-const downloadImage = async (url, imageDirPath) => {
-  const name = url.split('/').pop();
-  const savePath = path.resolve(imageDirPath, name)
-  if (fs.existsSync(savePath)) return name;
-  try {
-    const res = await axios.get(url, { responseType: 'stream' });
-    res.data.pipe(fs.createWriteStream(savePath))
-    return new Promise((resolve, reject) => {
-      res.data.on('end', () => resolve(name))
-      res.data.on('error', (error) => reject(error))
-    })
-  } catch (error) {
-    console.log('image download fail:', error)
-  }
-}
-
-const parseHTML = (document) => {
-  const $ = cheerio.load(document);
-  const itemSelector = 'ul.doulist-items li > a';
-  let results = [];
-  $(itemSelector).each((index, item) => {
-    try {
-      const link = item.attribs['href'];
-      const id = link?.split('/')?.pop();
-      if (!id) {
-        throw new Error('link element not find:');
-      }
-      const el = $(item);
-      const coverImageSrc = el.find('.cover img').attr('src') ?? null;
-      const title = el.find('.title').text() ?? '';
-      results.push({
-        id,
-        cover: coverImageSrc,
-        title: title,
-      })
-    } catch (error) {
-      console.log('parse html document error:', error)
-    }
-  });
-  return results;
-}
+const parseHTML = require('./utils').parseHTML;
+const saveAllPictures = require('./utils').saveAllPictures;
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest },
   configOptions
 ) => {
-  const processItem = item => {
-    const { type, ...rest } = item;
+  const createDoubanItemNode = (item, type) => {
     const nodeIdPrefix = type === 'music' ? 'douban-favorite-album-' : 'douban-favorite-film-'
-    const nodeId = createNodeId(`${nodeIdPrefix}${rest.id}`)
-    const nodeContent = JSON.stringify(rest)
-    const nodeData = Object.assign({}, rest, {
+    const nodeId = createNodeId(`${nodeIdPrefix}${item.id}`)
+    const nodeContent = JSON.stringify(item)
+    actions.createNode({
+      ...item,
       id: nodeId,
       parent: null,
       children: [],
       internal: {
         type: type,
         content: nodeContent,
-        contentDigest: createContentDigest(rest),
+        contentDigest: createContentDigest(item),
       },
-    })
-    actions.createNode(nodeData);
+    });
   }
 
-  const createItemHandler = (type) => (url) =>
-    axios.get(url)
-      .then((res) => {
-        console.log("status", res.status);
-        return res.data;
-      })
-      .then(parseHTML)
-      .then((items) =>
-        Promise.all(
-          items.map(item =>
-            downloadImage(item.cover, configOptions.path)
-              .then((imageName) => ({ ...item, cover: imageName, type }))
-          )
-        )
-      )
-      .then(items => items.forEach(processItem))
-      .catch(error => {
-        console.log(error);
-      })
+  const process = async (type, pageUrl, { pathImageSaved }) => {
+    try {
+      const { data: document } = await axios.get(pageUrl);
+      const items = parseHTML(document);
+      const pictureFileNames = await saveAllPictures(
+        items.map(item => item.cover),
+        pathImageSaved
+      );
+      items
+        .map((item, index) => ({ ...item, cover: pictureFileNames[index] }))
+        .forEach((item) => {
+          createDoubanItemNode(item, type)
+        });
+    } catch (error) {
+      console.error('process douban favorite list failed:', error, type, pageUrl, pathImageSaved)
+      throw Error('process douban favorite list failed', error)
+    }
+  }
 
   // Gatsby adds a configOption that's not needed for this plugin, delete it
   delete configOptions.plugins
-  // plugin code goes here...
-  const handleMusic = createItemHandler('DoubanFavoriteMusic');
-  const handleFilm = createItemHandler('DoubanFavoriteFilm');
   const { musiclistId, filmlistId } = configOptions;
-  const baseUrl = 'https://m.douban.com/doulist';
-  await Promise.all([
-    handleMusic(`${baseUrl}/${musiclistId}`),
-    handleFilm(`${baseUrl}/${filmlistId}`),
-  ]);
+  const pathImageSaved = configOptions.path;
+  const baseUrl = 'https://www.douban.com/doulist';
+  try {
+    await Promise.all([
+      process('DoubanFavoriteMusic', `${baseUrl}/${musiclistId}`, { pathImageSaved }),
+      process('DoubanFavoriteFilm', `${baseUrl}/${filmlistId}`, { pathImageSaved }),
+    ]);
+  } catch (error) {
+    console.error(error)
+  }
 }

@@ -1,0 +1,13 @@
+.grid-cols-content-toc {
+  grid-template-columns: auto;
+}
+
+.toc li {
+  margin-bottom: 0.75rem;
+}
+
+@media(min-width: 1024px) {
+  .grid-cols-content-toc {
+    grid-template-columns: auto 20rem;
+  }
+}

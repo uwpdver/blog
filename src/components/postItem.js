@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const PostItem = ({ link, title, date, description, excerpt, category }) => {
   return (
     <article
-      className="post-item my-8"
+      className="post-item"
       itemScope
       itemType="http://schema.org/Article"
     >
