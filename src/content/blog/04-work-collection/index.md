@@ -2,6 +2,7 @@
 title: "Work Collection"
 description: "How to add work experience."
 date: "Mar 19 2024"
+draft: true
 ---
 
 The `work` collections is found in `src/content/work`.
