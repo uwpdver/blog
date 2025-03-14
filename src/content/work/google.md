@@ -1,7 +1,7 @@
 ---
-company: "Google"
-role: "Staff Software Engineer"
-dateStart: "11/27/2022"
+company: "泰基网络"
+role: "前端工程师"
+dateStart: "2/20/2025"
 dateEnd: "Current"
 ---
 

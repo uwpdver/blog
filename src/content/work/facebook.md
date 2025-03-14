@@ -1,5 +1,5 @@
 ---
-company: "Facebook"
+company: "斗鱼"
 role: "Intern"
 dateStart: "07/01/2019"
 dateEnd: "12/31/2019"
