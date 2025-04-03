@@ -8,9 +8,17 @@ import { SITE, ROUTERS, WEBSITE_PATHNAME } from "@consts";
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
       <Link href={WEBSITE_PATHNAME.HOME} underline={false}>
-        <div class="font-semibold">
+        <img
+          src={SITE.LOGO}
+          alt={SITE.NAME}
+          class="w-4 h-4 inline-block"
+          loading="lazy"
+          width="16"
+          height="16"
+        />
+        <span class="font-semibold leading-none">
           {SITE.NAME}
-        </div>
+        </span>
       </Link>
       <nav class="flex gap-1">
         {
