@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://uwpdver.github.io",
+  site: "https://ymsjl.github.io",
   base: "/blog",
   integrations: [mdx(), sitemap(), tailwind()],
 });
