@@ -53,6 +53,6 @@ export const WEBSITE_PATHNAME: Record<PAGE_KEY, string> = Object.entries(PAGE_ME
 export const SOCIALS: Socials = [
   {
     NAME: "github",
-    HREF: "https://github.com/uwpdver"
+    HREF: "https://github.com/ymsjl",
   },
 ];
