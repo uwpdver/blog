@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import { dateRange } from "@lib/utils";
-import { WORK } from "@consts";
+import { PAGE_METADATA } from "@consts";
 
 const collection = (await getCollection("work")).sort(
   (a, b) =>
@@ -18,7 +18,10 @@ const work = await Promise.all(
 );
 ---
 
-<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+<PageLayout
+  title={PAGE_METADATA.WORK.TITLE}
+  description={PAGE_METADATA.WORK.DESCRIPTION}
+>
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-gray-500 dark:text-white text-3xl">

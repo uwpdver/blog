@@ -1,27 +1,26 @@
 ---
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
-import { SITE } from "@consts";
+import { SITE, ROUTERS, WEBSITE_PATHNAME } from "@consts";
 ---
 
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
+      <Link href={WEBSITE_PATHNAME.HOME} underline={false}>
         <div class="font-semibold">
           {SITE.NAME}
         </div>
       </Link>
       <nav class="flex gap-1">
-        <Link href="/blog"> 文章 </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work"> 工作 </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/projects"> 项目 </Link>
+        {
+          ROUTERS.map((item, index) => (
+            <>
+              {index !== 0 && <span>/</span>}
+              <Link href={item.PATHNAME}>{item.TITLE}</Link>
+            </>
+          ))
+        }
       </nav>
     </div>
   </Container>

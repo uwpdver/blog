@@ -9,6 +9,7 @@ export type Site = {
 export type Metadata = {
   TITLE: string;
   DESCRIPTION: string;
+  PATHNAME: string;
 };
 
 export type Socials = {

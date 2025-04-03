@@ -3,14 +3,17 @@ import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
-import { PROJECTS } from "@consts";
+import { PAGE_METADATA } from "@consts";
 
-const projects = (await getCollection("projects"))
+const projects = (await getCollection("project"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+<PageLayout
+  title={PAGE_METADATA.PROJECT.TITLE}
+  description={PAGE_METADATA.PROJECT.DESCRIPTION}
+>
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-gray-500 dark:text-white text-3xl">

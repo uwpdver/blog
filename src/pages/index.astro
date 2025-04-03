@@ -5,19 +5,19 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, PAGE_METADATA, SOCIALS, WEBSITE_PATHNAME } from "@consts";
 
-const blog = (await getCollection("blog"))
+const blogs = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects = (await getCollection("projects"))
+const projects = (await getCollection("project"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
-const allwork = (await getCollection("work"))
+const allworks = (await getCollection("work"))
   .sort(
     (a, b) =>
       new Date(b.data.dateStart).valueOf() -
@@ -26,14 +26,17 @@ const allwork = (await getCollection("work"))
   .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const work = await Promise.all(
-  allwork.map(async (item) => {
+  allworks.map(async (item) => {
     const { Content } = await item.render();
     return { ...item, Content };
   })
 );
 ---
 
-<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<PageLayout
+  title={PAGE_METADATA.HOME.TITLE}
+  description={PAGE_METADATA.HOME.DESCRIPTION}
+>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
       你好，我是刘志豪 <span class="text-xl">👋🏻</span>
@@ -57,11 +60,11 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">最新文章</h5>
-          <Link href="/blog"> 浏览全部文章 </Link>
+          <Link href={WEBSITE_PATHNAME.BLOG}> 浏览全部文章 </Link>
         </div>
         <ul class="flex flex-col gap-4">
           {
-            blog.map((post) => (
+            blogs.map((post) => (
               <li>
                 <ArrowCard entry={post} />
               </li>
@@ -73,7 +76,7 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">工作经历</h5>
-          <Link href="/work"> 浏览全部经历 </Link>
+          <Link href={WEBSITE_PATHNAME.WORK}> 浏览全部经历 </Link>
         </div>
         <ul class="flex flex-col space-y-4">
           {
@@ -98,7 +101,7 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">最近的项目</h5>
-          <Link href="/projects"> 浏览全部项目 </Link>
+          <Link href={WEBSITE_PATHNAME.PROJECT}> 浏览全部项目 </Link>
         </div>
         <ul class="flex flex-col gap-4">
           {
@@ -134,6 +137,7 @@ const work = await Promise.all(
           <li class="line-clamp-1">
             <Link
               href={`mailto:${SITE.EMAIL}`}
+              external
               aria-label={`Email ${SITE.NAME}`}
             >
               {SITE.EMAIL}

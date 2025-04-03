@@ -8,33 +8,51 @@ export const SITE: Site = {
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
-export const HOME: Metadata = {
-  TITLE: "主页",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+export enum PAGE_KEY {
+  HOME = "HOME",
+  BLOG = "BLOG",
+  WORK = "WORK",
+  PROJECT = "PROJECT"
+}
+
+export const PAGE_METADATA: Record<PAGE_KEY, Metadata> = {
+  [PAGE_KEY.HOME]: {
+    TITLE: "主页",
+    DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+    PATHNAME: "/",
+  },
+  [PAGE_KEY.BLOG]: {
+    TITLE: "文章",
+    DESCRIPTION: "A collection of articles on topics I am passionate about.",
+    PATHNAME: "/blog",
+  },
+  [PAGE_KEY.WORK]: {
+    TITLE: "工作",
+    DESCRIPTION: "Where I have worked and what I have done.",
+    PATHNAME: "/work",
+  },
+  [PAGE_KEY.PROJECT]: {
+    TITLE: "项目",
+    DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+    PATHNAME: "/project",
+  }
 };
 
-export const BLOG: Metadata = {
-  TITLE: "文章",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
-};
+export const ROUTERS: Metadata[] = [
+  PAGE_KEY.HOME,
+  PAGE_KEY.BLOG,
+  PAGE_KEY.WORK,
+  PAGE_KEY.PROJECT
+].map((key) => PAGE_METADATA[key]);
 
-export const WORK: Metadata = {
-  TITLE: "工作",
-  DESCRIPTION: "Where I have worked and what I have done.",
-};
-
-export const PROJECTS: Metadata = {
-  TITLE: "项目",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
-};
+export const WEBSITE_PATHNAME: Record<PAGE_KEY, string> = Object.entries(PAGE_METADATA).reduce((acc, [key, { PATHNAME }]) => {
+  acc[key as PAGE_KEY] = PATHNAME;
+  return acc;
+}, {} as Record<PAGE_KEY, string>);
 
 export const SOCIALS: Socials = [
-  { 
+  {
     NAME: "github",
     HREF: "https://github.com/uwpdver"
   },
-  { 
-    NAME: "linkedin",
-    HREF: "https://www.linkedin.com/in/markhorn-dev",
-  }
 ];

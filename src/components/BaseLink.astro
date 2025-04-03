@@ -1,0 +1,18 @@
+---
+type Props = {
+  href: string;
+  external?: boolean;
+  underline?: boolean;
+  class?: string
+};
+
+const { href, external, ...rest } = Astro.props;
+---
+
+<a
+  href={external ? href : `${import.meta.env.BASE_URL}${href}`}
+  target={external ? "_blank" : "_self"}
+  {...rest}
+>
+  <slot />
+</a>

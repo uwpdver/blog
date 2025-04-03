@@ -20,7 +20,7 @@ const work = defineCollection({
   }),
 });
 
-const projects = defineCollection({
+const project = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -32,4 +32,4 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { blog, work, projects };
+export const collections = { blog, work, project };

@@ -1,14 +1,15 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import BaseLink from "./BaseLink.astro";
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
+  entry: CollectionEntry<"blog"> | CollectionEntry<"project">;
 };
 
 const { entry } = Astro.props;
 ---
 
-<a
+<BaseLink
   href={`/${entry.collection}/${entry.slug}`}
   class="relative group flex flex-nowrap py-3 pr-10 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
 >
@@ -39,4 +40,4 @@ const { entry } = Astro.props;
       class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
     ></polyline>
   </svg>
-</a>
+</BaseLink>
