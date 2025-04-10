@@ -1,7 +1,7 @@
 ---
-title: "Astro Nano"
-description: "Minimal portfolio and blog build with astro and no frameworks."
-date: "Mar 26 2024"
+title: "Afeedrss"
+description: "这是一个 RSS 阅读器前端，使用 Inoreader 的 api 服务，界面简洁"
+date: "2025/4/10"
 demoURL: "https://astro-nano-demo.vercel.app"
 repoURL: "https://github.com/markhorn-dev/astro-nano"
 ---
